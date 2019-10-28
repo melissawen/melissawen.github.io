@@ -1,8 +1,8 @@
 # SITE CONFIGURATION
 baseurl: ""
-url: "https://wenonweb.com"
-title: wen.onweb # site's title
-description: "A website with blog posts and pages" # used by search engines
+url: "https://melissawen.github.io"
+title: Wen.OnWeb # site's title
+description: "Melissa Wen Website - blog posts and pages" # used by search engines
 exclude:
 - portfolio
 
@@ -21,23 +21,23 @@ theme_settings:
   favicon: assets/favicon.ico
 
   # Header and footer text
-  header_text: melissa-wen is up-to-date
-  header_feature_image: assets/img/photos/flower.jpg
+  header_text:
+  header_feature_image:
   footer_text: >
     Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
 
   # Icons
   rss: true  # Make sure you created a feed.xml with feed.xml layout
-  email_address: melissa.srw@gmail.com
+  email_address:
   behance:
   bitbucket:
   dribbble:
   facebook:
   flickr:
-  gitlab:
-  github: "sylhare"
+  gitlab: "melissawen"
+  github: "melissawen"
   google_plus:
-  instagram:
+  instagram: "melissa.wen.br"
   keybase:
   linkedin:  # Full URL
   pinterest:
@@ -46,19 +46,19 @@ theme_settings:
   stack_exchange:  # Full URL
   steam:
   tumblr:
-  twitter: # "twitter username"
+  twitter:  "melissasrw"
   vimeo:
   wordpress:
   youtube:
 
   # Sharing options
   share_buttons:
-    facebook: true
+    facebook:
     twitter: true
     tumblr:
     pinterest:
     pocket:
-    reddit: true
+    reddit:
     linkedin:
     wordpress:
     email: true
