@@ -1,0 +1,123 @@
+[
+   
+      {
+        "title"    : "Hello World!",
+        "category" : "",
+        "tags"     : " ",
+        "url"      : "/randomness/2019/08/27/hello-world.html",
+        "date"     : "August 27, 2019",
+        "excerpt"  : "First post. Just to fill my blog with a post.\n",
+        "content"  : "First post. Just to fill my blog with a post.\n"
+      } 
+   
+   ,
+   
+     {
+       
+          "title"    : "Ninja",
+          "category" : "",
+          "tags"     : " Lorem",
+          "url"      : "/portfolio/ninja",
+          "date"     : "April 8, 2014",
+          "excerpt"  : "<p><img src=\"/assets/img/portfolio/ninja.png\" alt=\"image\" /></p>\n\n<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architec...",
+          "content"  : "<p><img src=\"/assets/img/portfolio/ninja.png\" alt=\"image\" /></p>\n\n<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architec..."
+       
+     } ,
+   
+     {
+       
+          "title"    : "Creative",
+          "category" : "",
+          "tags"     : " Ipsum",
+          "url"      : "/portfolio/safe",
+          "date"     : "August 16, 2014",
+          "excerpt"  : "<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem <...",
+          "content"  : "<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem <..."
+       
+     } ,
+   
+     {
+       
+          "title"    : "Circus",
+          "category" : "",
+          "tags"     : " Ipsum",
+          "url"      : "/portfolio/circus",
+          "date"     : "September 1, 2014",
+          "excerpt"  : "<p><img src=\"/assets/img/portfolio/circus.png\" alt=\"image\" /></p>\n\n<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi archite...",
+          "content"  : "<p><img src=\"/assets/img/portfolio/circus.png\" alt=\"image\" /></p>\n\n<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi archite..."
+       
+     } ,
+   
+     {
+       
+          "title"    : "Tower of Hanoi",
+          "category" : "",
+          "tags"     : " ",
+          "url"      : "/portfolio/hanoi",
+          "date"     : "September 1, 2014",
+          "excerpt"  : "<p><img src=\"/assets/img/portfolio/toh.png\" alt=\"image\" /></p>\n\n<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto...",
+          "content"  : "<p><img src=\"/assets/img/portfolio/toh.png\" alt=\"image\" /></p>\n\n<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto..."
+       
+     } ,
+   
+     {
+       
+          "title"    : "Tic tac toe",
+          "category" : "",
+          "tags"     : " ",
+          "url"      : "/portfolio/tictactoe",
+          "date"     : "September 1, 2014",
+          "excerpt"  : "<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem <...",
+          "content"  : "<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem <..."
+       
+     } ,
+   
+     {
+       
+          "title"    : "Cake",
+          "category" : "",
+          "tags"     : " Lorem, Ipsum, Portfolio",
+          "url"      : "/portfolio/cake",
+          "date"     : "September 27, 2015",
+          "excerpt"  : "<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem <...",
+          "content"  : "<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem <..."
+       
+     } ,
+   
+     {
+       
+          "title"    : "Jekyll",
+          "category" : "",
+          "tags"     : " ",
+          "url"      : "/portfolio/jekyllblog",
+          "date"     : "May 26, 2017",
+          "excerpt"  : "<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem <...",
+          "content"  : "<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem <..."
+       
+     } ,
+   
+     {
+       
+          "title"    : "Lorem Ipsum",
+          "category" : "",
+          "tags"     : " ",
+          "url"      : "/portfolio/submarine",
+          "date"     : "September 3, 2017",
+          "excerpt"  : "<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem <...",
+          "content"  : "<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem <..."
+       
+     } ,
+   
+     {
+       
+          "title"    : "Github",
+          "category" : "",
+          "tags"     : " Lorem, Portfolio",
+          "url"      : "/portfolio/gitlecture",
+          "date"     : "October 20, 2017",
+          "excerpt"  : "<p><img src=\"/assets/img/portfolio/github.png\" alt=\"image\" /></p>\n\n<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi archite...",
+          "content"  : "<p><img src=\"/assets/img/portfolio/github.png\" alt=\"image\" /></p>\n\n<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi archite..."
+       
+     } 
+   
+]
