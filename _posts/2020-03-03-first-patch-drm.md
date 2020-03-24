@@ -5,8 +5,6 @@ date: 2020-03-04 10:00:00 -0300
 categories: randomness
 --- 
 
-Hi!
-
 In this post, I talk a little about my first steps to introduce myself to the
 DRM community, a Linux subsystem from which I am looking to learn more and
 develop skills.
