@@ -1,5 +1,9 @@
---- layout: post title: "First patches to the DRM community" date: 2020-03-04
-10:00:00 -0300 categories: randomness --- 
+---
+layout: post
+title: "First patches to the DRM community"
+date: 2020-03-04 10:00:00 -0300
+categories: randomness
+--- 
 
 Hi!
 
@@ -63,7 +67,8 @@ declared:
 ``` The kernel has grown steadily since its first release in 1991, when there
 were only about 10,000 lines of code. At almost 25 million lines (up from nearly
 22 million), the kernel is almost three million lines larger than it was at the
-time of the previous version of this report.  ```
+time of the previous version of this report. 
+```
 
 Someone can think "Wow, it is great!", but is important to noticed that large
 size is not direct related to power or potential. Lines of code need of
