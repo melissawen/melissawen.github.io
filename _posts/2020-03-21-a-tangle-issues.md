@@ -1,5 +1,9 @@
---- layout: post title: "A tangle of issues" date: 2020-03-21 10:00:00 -0300
-categories: randomness --- 
+---
+layout: post
+title: "A tangle of issues"
+date: 2020-03-23 14:00:00 -0300
+categories: randomness
+--- 
 
 Hi!
 
@@ -58,8 +62,8 @@ attention and may be involved in this problem is at vkms\_composer.c:
 
 ``` /*
  * The worker can fall behind the vblank hrtimer, make sure we catch up.  */
-   while (frame_start <= frame_end) drm_crtc_add_crc_entry(crtc, true,
-frame_start++, &crc32);
+   while (frame_start <= frame_end)
+      drm_crtc_add_crc_entry(crtc, true, frame_start++, &crc32);
 
 ```
 
