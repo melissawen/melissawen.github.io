@@ -10,12 +10,12 @@ tags: [About, Archive]
 I'm a Computer Science MSc student at the Institute
 of Mathematics and Statistics of the University of São Paulo
 [(IME-USP)](https://www.ime.usp.br/).
-I holds a BSc in Computer Science in 2012 at the Federal University of Bahia
+I hold a BSc in Computer Science in 2012 from the Federal University of Bahia
 [(UFBA)](https://www.ufba.br/), where
 I have also served as a temporary professor of numerical analysis.
 
-Before starting my MSc Studies I have worked using and developing different
-free software project.
+Before starting my MSc studies I have worked using and developing different
+free software projects.
 I have coordinated the front-end team to develop
 [the Software Publico Brasileiro portal](https://softwarepublico.gov.br/)
 and I was a front-end developer of
