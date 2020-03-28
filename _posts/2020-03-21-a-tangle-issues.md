@@ -19,33 +19,43 @@ modification with this patch:
 
 [PATCH] drm/vkms: enable cursor by default
 
-However, besides made the logical change on the code, I wanted to see this
-behavior on bits (or something like this).  For this, I thought of looking for
-the cursor on the framebuffer used for the IGT test kms\_enable\_cursor. This
-test has a subtest that I was trying to fix before.  First, I checked if
-variables related to cursor presented values that represents the enabling
-according to the context (and put a log of pr\_info to say: "ok, it looks like
-working"). Second, I thought that in this test I could find a white cursor in
-the frame buffer whenever the cursor was enabled (since it also is a
-requirement for the test).
+However,  as a newbie, I was not confident only with the logical change on the
+code. I was curious to see this behavior on bits (or something like this). For
+this, I thought to look for the cursor on the framebuffer. As I have already
+played with the IGT test kms\_enable\_cursor, I considered using the framebuffer
+of this test to see the cursor.
 
-With this in mind, I ran the subtest pipe-A-cursor-alpha-transparent to looking
-for this white cursor became transparent and after some computing, the
-transparent cursor plane would be blend with the other planes... but, ops...
-where is the cursor? Hmm... Let's run the cursor-opaque test that I know it is
-working and right passing... ops, crash? It's weird!
+First, according to the context, I checked if variables related to cursor
+presented values that represent the enabling, putting a lot of pr_info to
+say: "ok, it looks like working". Second, I thought I could find a white
+cursor in the framebuffer of this test whenever the cursor was enabled, since
+it also is a requirement for the test execution.
 
-This situation and putting many pr\_info helped me to understand a little more
-of what is happening: the abstraction involved, the test execution step by
-step, searching on web information about cairo operations called by the tests.
-I realized the pipe-A-cursor-alpha-transparent check the CRC from the frame
-buffer that has already blended a cursor transparent in a black background, for
-this, it's not possible to find a white cursor in any step of the test. This
-interpretation match with the output of the pixels printed in my investigation
-(only have two possible ARGB pixel values: transparent black and opaque black).
-I am still not sure if my comprehension is correct, but following this logic
-helped me to find a solution for the pipe-A-cursor-alpha-transparent test and
-also put things on a backlog of investigation.
+With this in mind, I ran the subtest pipe-A-cursor-alpha-transparent to
+looking for this white cursor and see it become transparent. Then, after some
+computing, the transparent cursor plane would be blend with the other planes...
+but, ops... where is the cursor?
+
+"Well, maybe there is a problem with the subtest. Let's run the
+pipe-A-cursor-alpha-opaque test that I know is working and right passing! 
+
+Ops, crash? It's weird!"
+
+To face this weird situation encouraged me to dive into the elements of IGT
+test and understand a little more of what is happening: the abstraction
+involved, the test execution step by step, searching on web information about
+Cairo operations called by the tests, etc.
+
+I realized the pipe-A-cursor-alpha-transparent check the CRC from the framebuffer
+that has already blended a cursor transparent in a black background, with this,
+it's not possible to find a white cursor in any step of the test, that was my
+initial intention.
+
+This interpretation matches the output of the pixels printed in my investigation,
+where only have two possible ARGB pixel values: transparent black and opaque
+black. I am still not sure if my comprehension is correct, but following this logic
+helped me to find a solution for the pipe-A-cursor-alpha-transparent test and also
+put the other things on a backlog of investigation.
 
 ### Backlog of issues to treat
 
