@@ -62,13 +62,13 @@ put the other things on a backlog of investigation.
 1. Using a VM to run both kms\_enable\_cursor subtests:
    pipe-A-cursor-alpha-transparent/opaque, I put some pr\_info to check the path
 of execution inside vkms features. With this, I could understand better the
-process of planes blend and crc computing and also check if every time that I
+process of planes blending and crc computing, and also check if every time that I
 run a subtest, all steps are executed. From the opaque-subtest episode of
-crashing, I figured out an unstable behavior after check that the test fails
-and any pr\_info inside vkms functions are not printed.  I asked Siqueira about
+crashing, I figured out an unstable behavior, I verified that the test fails
+and any pr\_info inside vkms functions are not printed. I asked Siqueira about
 this problem, and he suggested to dive inside the [hrtimer/vblank
 operations](https://siqueira.tech/report/add-infrastructure-for-vblank-and-page-flip-events-simulated-via-hrtimer-in-vkms/)
-to check if something is causing a delay.  A code snippet that deserves
+to check if something is causing a delay. A code snippet that deserves
 attention and may be involved in this problem is at vkms\_composer.c:
 
 ``` /*
@@ -84,14 +84,15 @@ post](http://haneensa.github.io/2018/09/09/CRC/)) was blocked and I was
 unallowed to see its content. These suspicions together lead me to think of two
 possible problems: a lost lock/unlock operation or long busy writing operation.
 
-2. Maybe this issue is related to the problem above. Despite the solution for
-pipe-A-cursor-alpha-transparent, it still displays a warning that needs a
-attention: Suspicious CRC: All values are 0. The weird thing is: printing
-pixels of the test, they are actually all zero (black: 0x000000) after setting
-the alpha channel for zero: ARGB to XRGB. But this warning does not appear when
-running past versions of kernel on a host machine. Could it be some debufs
-implementation fail or some problem on the IGT test construction? Hope to have
-good news on the next post update.
+2. Maybe this issue is related to the problem above. Although I found a solution
+for pipe-A-cursor-alpha-transparent, this subtest still displays a warning that
+needs attention: Suspicious CRC: All values are 0. The weird thing is when I
+print the pixels in the test, because they are actually all zero (black: 0x000000)
+after setting the alpha channel for zero, ie, ARGB to XRGB. But this warning does
+not appear when running past versions of kernel on a host machine.
+
+Could it be some debufs implementation fail or some problem on the IGT test
+construction? I hope to have good news in the next post update.
 
 ### Finding a solution for pipe-A-cursor-alpha-transparent crash
 
