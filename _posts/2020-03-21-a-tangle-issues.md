@@ -5,16 +5,17 @@ date: 2020-03-23 14:00:00 -0300
 categories: randomness
 --- 
 
-Hi!
+After I began a simple change in the cursor behavior in VKMS, many related
+issues started to appear. My initial task seemed simple, sending a proposal to
+enable cursor by default when loading the vkms module. However, I have now
+spent a lot of time untangling issues that troubled me to validate that change.
 
-I have spent a lot of time untangling issues that began after I start to change
-a single behavior of cursor on VKMS.  My initial task was submitting a proposal
-of enabling cursor by default when loading the vkms module. This task arose
-after I have asked on dri-devel channel for suggestions to contribute for vkms,
-because I am interested in participating in this year's Google internship
-program. As the mentor for VKMS is Rodrigo Siqueira, he suggested this initial
-task.  Each day, I have become more familiar with VKMS. So, I proposed a simple
-modification and sent this patch:
+This initial task arose after I have asked on the dri-devel IRC channel for
+suggestions to contribute to VKMS because I am interested in participating in
+this year's Google internship program (GSoC). As VKMS's mentor is Rodrigo
+Siqueira, he suggested this warm-up task. Each day, I become more familiar with
+VKMS, so I could quickly realize what I need to modify, and I proposed a simple
+modification with this patch:
 
 [PATCH] drm/vkms: enable cursor by default
 
