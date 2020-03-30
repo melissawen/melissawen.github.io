@@ -61,15 +61,16 @@ put the other things on a backlog of investigation.
 
 1. Using a VM to run both kms\_enable\_cursor subtests:
    pipe-A-cursor-alpha-transparent/opaque, I put some pr\_info to check the path
-of execution inside vkms features. With this, I could understand better the
-process of planes blending and crc computing, and also check if every time that I
-run a subtest, all steps are executed. From the opaque-subtest episode of
-crashing, I figured out an unstable behavior, I verified that the test fails
-and any pr\_info inside vkms functions are not printed. I asked Siqueira about
-this problem, and he suggested to dive inside the [hrtimer/vblank
-operations](https://siqueira.tech/report/add-infrastructure-for-vblank-and-page-flip-events-simulated-via-hrtimer-in-vkms/)
-to check if something is causing a delay. A code snippet that deserves
-attention and may be involved in this problem is at vkms\_composer.c:
+of execution inside vkms features. With this, I could better understand the process
+of planes blending and CRC computing, and also verify if all steps are executed
+when I run a subtest. 
+
+From the opaque-subtest episode of crashing, I figured out an unstable behavior;
+I verified that the test fails, and nothing was printed even with a pr\_info inside
+each VKMS function involved in the process. I asked Siqueira about this problem,
+and he suggested to dive inside the [hrtimer/vblank
+operations](https://siqueira.tech/report/add-infrastructure-for-vblank-and-page-flip-events-simulated-via-hrtimer-in-vkms/) to check if something is causing a delay. In this problem, a code snippet in
+vkms\_composer.c deserves attention and maybe generating some delay:
 
 ``` /*
  * The worker can fall behind the vblank hrtimer, make sure we catch up.  */
@@ -78,11 +79,11 @@ attention and may be involved in this problem is at vkms\_composer.c:
 
 ```
 
-I also checked that the file /sys/kernel/debug/dri/0/crtc-0/crc/data that
+I also tried to check the file /sys/kernel/debug/dri/0/crtc-0/crc/data that
 stores framebuffer and crc values (as explained by [Haneen in this
-post](http://haneensa.github.io/2018/09/09/CRC/)) was blocked and I was
-unallowed to see its content. These suspicions together lead me to think of two
-possible problems: a lost lock/unlock operation or long busy writing operation.
+post](http://haneensa.github.io/2018/09/09/CRC/)). However, it was blocked and I was
+unallowed to see its content. These problems together lead me to suspect two possible
+problems: a lost lock/unlock operation or long busy writing operation.
 
 2. Maybe this issue is related to the problem above. Although I found a solution
 for pipe-A-cursor-alpha-transparent, this subtest still displays a warning that
@@ -96,21 +97,21 @@ construction? I hope to have good news in the next post update.
 
 ### Finding a solution for pipe-A-cursor-alpha-transparent crash
 
-I found a strategy to focus on validating the correctness of the code change to
-make the test pass. The idea was that the solution would work for both the
-transparent and the opaque cursor. It also needed to check if the procedure was
-correct by printing the pixel values before and after the XRGB
-operation. This concern was because, after several executions, I realized that
-most of the proposed solutions fall into a trap related to the endianness of
-orders of magnitude (bits x bytes). Then, the ideal solution would be
-extracting the RGB values without depending on whether the operation to ignore
-the alpha channel was little or big-endianness.
+I needed a strategy to solve these side problems and focus on validating the
+test's success after changing the operation. Thus, I decided to check how the
+code works for both the transparent and the opaque cursor, bringing the idea
+of complementarity. To do this, I printed pixel values before and after the
+XRGB operation. This concern occurred because, after several executions, I
+realized that most of the proposed solutions fall into a trap related to the
+existence of orders of magnitude (bits x bytes). In my opinion, the ideal
+solution would prioritize legibility, extracting RGB values without the
+concern of interpreting small or large expressions and magnitudes.
 
 Using a previous experience of contributing to the IIO, I thought about using
 bitwise / bitfield operations to ensure the interpretation in bits and the
 extraction of only the RGB bits of interest.
 
-With that, I define a GENMASK that visualized only the first 24 bits (from
+With that, I define a GENMASK that get only the first 24 bits (from
 right to left) and extract those bits using the FIELD\_GET function defined in
 the file: linux / bitfield.h. I learned a little about this operation in a
 patch I sent a year ago to improve the readability of an IIO staging driver:
