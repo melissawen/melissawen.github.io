@@ -32,8 +32,12 @@ The lack of support on kworkflow for deployment on vm drove me to start hacking
 the code. As updating vm needs understanding things more complex, I started
 developing soft changes (or less integrated with the scripts structure). This
 work is still in progress, and after discuss with others kworkflow developers
-(on the issue, on IRC and on voice meetings), the proposals of changes is
+(on the issue, on IRC and on voice meetings), the proposals of changes were
 refined.
+
+* [Fix alert message](https://github.com/kworkflow/kworkflow/pull/176)
+* [Expand kw explore and add GNU grep](https://github.com/kworkflow/kworkflow/pull/178)
+* [Development of kw deploy --vm](https://github.com/kworkflow/kworkflow/pull/181)
 
 ### Study concepts and code related to my GSoC project
 
@@ -48,17 +52,35 @@ code.
 My first project task is to find out why it is not possible to access debugfs
 files when running kms\_cursor\_crc (and fix it). Two things could help me
 solve it: learning about debugfs and dissecting kms\_cursor\_crc. To guide my
-studies, my mentor suggested taking a look at a patchset for the IGT write-back
-test implementation that CI reported a crash on debugfs\_test for i915. For this
+studies, my mentor suggested taking a look at a [patchset for the IGT write-back
+test](https://patchwork.freedesktop.org/series/68352/) implementation that CI
+reported a crash on debugfs\_test for i915. For this
 investigation, I installed on another machine (an old netbook) a Debian without
 a graphical environment, and, accessing via ssh, I applied the patches and ran
 the test. Well, everything seemed to work (and the subtests passed). Perhaps
 something has been fixed or changed in IGT since the patchset was sent. Nothing
 more to do here.
 
+```
+
+IGT_FORCE_DRIVER=i915 build/tests/debugfs_test 
+IGT-Version: 1.25-gf1884574 (x86_64) (Linux: 4.19.0-9-amd64 x86_64)
+Force option used: Using driver i915
+Force option used: Using driver i915
+Starting subtest: sysfs
+Subtest sysfs: SUCCESS (0,009s)
+Starting subtest: read_all_entries
+Subtest read_all_entries: SUCCESS (0,094s)
+Starting subtest: read_all_entries_display_on
+Subtest read_all_entries_display_on: SUCCESS (0,144s)
+Starting subtest: read_all_entries_display_off
+Subtest read_all_entries_display_off: SUCCESS (0,316s)
+
+```
+
 #### Diving into the kms\_cursor\_crc test
 
-I'm writing a kind of anatomy from the kms\ _cursor\ _crc test. I chose the
+I'm writing a kind of anatomy from the kms\_cursor\_crc test. I chose the
 alpha-transparent subtest as a target and then followed each step necessary to
 achieve it, understanding each function called, parameters, and also
 abstractions. I am often confused by something that once seemed clear. Well, it
@@ -66,9 +88,9 @@ comes to graphic interface stuff and is acceptable that theses abstraction will
 disorientate me LOL I guess... The result of this work will be my next post.
 In the meantime, here are links that helped me on this journey
 
-* https://www.x.org/wiki/Development/Documentation/HowVideoCardsWork/
-* https://events.static.linuxfound.org/sites/events/files/slides/brezillon-drm-kms.pdf
-* https://people.freedesktop.org/~marcheu/linuxgraphicsdrivers.pdf
-* https://www.cairographics.org/manual/cairo-cairo-surface-t.html
-* https://drm.pages.freedesktop.org/igt-gpu-tools/igt-gpu-tools-Framebuffer.html
+* [X.Org/HowVideoCardsWork](https://www.x.org/wiki/Development/Documentation/HowVideoCardsWork/)
+* [The DRM/KMS subsystem from a newbie’s point of view](https://events.static.linuxfound.org/sites/events/files/slides/brezillon-drm-kms.pdf)
+* [Linux Graphics Drivers: an Introduction/Stéphane Marchesin](https://people.freedesktop.org/~marcheu/linuxgraphicsdrivers.pdf)
+* [Cairo Manual](https://www.cairographics.org/manual/cairo-cairo-surface-t.html)
+* [igt-gpu-tools Reference Manual](https://drm.pages.freedesktop.org/igt-gpu-tools/igt-gpu-tools-Framebuffer.html)
 
