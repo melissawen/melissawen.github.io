@@ -43,13 +43,13 @@ and subtest execution.
 ### Initial test setup
 
 ```
-igt_fixture { data.drm_fd = drm_open_driver_master(DRIVER_ANY); ret =
-drmGetCap(data.drm_fd, DRM_CAP_CURSOR_WIDTH, &cursor_width);
-	
-	igt_assert(ret == 0 || errno == EINVAL); /* Not making use of
-cursor_height since it is same as width, still reading */ ret =
-drmGetCap(data.drm_fd, DRM_CAP_CURSOR_HEIGHT, &cursor_height); igt_assert(ret
-== 0 || errno == EINVAL);
+igt_fixture {
+	data.drm_fd = drm_open_driver_master(DRIVER_ANY);
+	ret = drmGetCap(data.drm_fd, DRM_CAP_CURSOR_WIDTH, &cursor_width);
+	igt_assert(ret == 0 || errno == EINVAL);
+	/* Not making use of cursor_height since it is same as width, still reading */
+	ret = drmGetCap(data.drm_fd, DRM_CAP_CURSOR_HEIGHT, &cursor_height);
+	igt_assert(ret == 0 || errno == EINVAL);
 		
 ```
 
@@ -74,10 +74,13 @@ tests must call this function to make sure that the [framebuffer
 console](https://www.kernel.org/doc/Documentation/fb/fbcon.txt) doesn't
 interfere by e.g. blanking the screen. 
 
-``` igt_require_pipe_crc(data.drm_fd);
+``` 
+    igt_require_pipe_crc(data.drm_fd);
 ```
 
-**void igt\_require\_pipe\_crc(int fd)** _From lib/igt\_debugfs_: checks
+**void igt\_require\_pipe\_crc(int fd)**
+
+_From lib/igt\_debugfs_: checks
 whether pipe CRC capturing is supported by the kernel. Uses _igt_skip_ to
 automatically skip the test/subtest if this isn't the case.
 
@@ -88,7 +91,7 @@ automatically skip the test/subtest if this isn't the case.
 **void igt\_display\_require(igt\_display\_t *display, int drm\_fd)**
 
 _From
-lib/igt\_kms.c_: Initializes @display (a pointer to an #igt\_display\_t
+lib/igt\_kms.c_: Initializes \@display (a pointer to an \#igt\_display\_t
 structure) and allocates the various resources required. This function
 automatically skips if the kernel driver doesn't support any CRTC or outputs.
 
@@ -117,12 +120,12 @@ igt_subtest_f("pipe-%s-cursor-alpha-transparent", kmstest_pipe_name(pipe))
 ### The execution of test\_cursor\_transparent
 
 **static void run\_test(data\_t \*data, void (\*testfunc)(data\_t \*), int cursor\_w, int cursor\_h)**
-The function run\_test wrap the common preparation
+
+The function run\_test wraps the habitual preparation
 for running a subtest and also, after then, a cleanup. Therefore, it basically
 has three steps:
 
-1. Prepare CRTC: **static void prepare_crtc(data\_t *data, igt\_output\_t
-*output, int cursor\_w, int cursor\_h)** This function is responsible for:
+1. Prepare CRTC: **static void prepare_crtc(data\_t *data, igt\_output\_t*output, int cursor\_w, int cursor\_h)** This function is responsible for:
   * Select the pipe to be used
   * Create Front and Restore framebuffer of primary plane
   * Find a valid plane type for primary plane and cursor plane
@@ -132,9 +135,10 @@ has three steps:
   * Store test image as cairo surface
   * Start CRC capture process
 2. Run subtest: testfunc(data) >> **static void test\_cursor\_transparent(data\_t \*data)** >> test\_cursor\_alpha(data, 0.0)
-The subtest\_cursor\_transparent is a variation of test\_cursor\_alpha where
-the alpha channel is set zero (or transparent).  So, let's take a look at
-test\_cursor\_alpha execution:
+   
+   The subtest\_cursor\_transparent is a variation of test\_cursor\_alpha where
+   the alpha channel is set zero (or transparent).  So, let's take a look at
+   test\_cursor\_alpha execution:
 
 ```
 static void test_cursor_alpha(data_t *data, double a)
@@ -146,7 +150,6 @@ static void test_cursor_alpha(data_t *data, double a)
 	uint32_t fb_id;
 	int curw = data->curw;
 	int curh = data->curh;
-
 	/*alpha cursor fb*/
 	fb_id = igt_create_fb(data->drm_fd, curw, curh,
 				    DRM_FORMAT_ARGB8888,
@@ -202,7 +205,6 @@ synchronize page flips and/or rendering to vertical blanking
 	cr = igt_get_cairo_ctx(data->drm_fd, &data->primary_fb[FRONTBUFFER]);
 	igt_paint_color_alpha(cr, 0, 0, curw, curh, 1.0, 1.0, 1.0, a);
 	igt_put_cairo_ctx(data->drm_fd, &data->primary_fb[FRONTBUFFER], cr);
-
 	igt_display_commit(display);
 	igt_wait_for_vblank(data->drm_fd, data->pipe);
 	igt_pipe_crc_get_current(data->drm_fd, pipe_crc, &ref_crc);
