@@ -42,7 +42,9 @@ static void run_test(data_t *data, void (*testfunc)(data_t *), int cursor_w, int
 
 From this, I change the code to skip the call testfunc(data) - a function to call a specific subtest, because I wanted to check if the problem was limited to prepare\_crtc/cleanup\_crtc or would be inside any subtest. I validated that the problem was inside prepare/cleanup operations, since the issue still happened even if no specific subtest was running.
 
-2. I checked what was allocated in prepare\_crtc to 'mirror' it when cleaning. I also took a look at other crc tests to see how they do the setup and cleanup of things. I was partially successful when I did a pre-check before the creation of pipe\_crc, releasing pipe\_crc if it was not free at that moment.
+#### More "freedom"
+
+I checked what was allocated in prepare\_crtc to 'mirror' it when cleaning. I also took a look at other crc tests to see how they do the setup and cleanup of things. I was partially successful when I did a pre-check before the creation of pipe\_crc, releasing pipe\_crc if it was not free at that moment.
 
 ```
 	/* create the pipe_crc object for this pipe */
@@ -54,9 +56,13 @@ From this, I change the code to skip the call testfunc(data) - a function to cal
 
 With this, the sequential execution of subtests passed to alternate between success and failure (note that no subtest was running, only it was preparing, and cleaning). I have also tried to complement the cleanup function, releasing more things, but I didn't see any improvement.
 
-3. I observed that something was generating an infinite busy wait for the debugfs file related to the fd. Then, I delimited this busy waiting to the line "poll(&pfd, 1, -1)" in lib/igt\_debugfs.c:igt\_pipe\_crc\_start, the line "poll(&pfd, 1, -1)". I tested that changing -1 to a finite timeout seemed to solve the problem, but it could not be a solution, since it would affect the behaviour of all IGT tests, not only the test kms\_cursor\_crc. 
+#### Waiting forever
 
-4. After I have read documentations and seen other crc related tests in IGT, I looked how is the process of pipe crc creation, initialization, crc collection, stop and free of kms\_pipe\_crc\_basic, and two functions called my attention: igt\_pipe\_crc\_new\_nonblock() and igt\_wait\_for\_vblank(). At this point, I remembered a previous talk that I had with Siqueira that the [VKMS simulates vblank interrupts](https://siqueira.tech/misceleneous/add-infrastructure-for-vblank-and-page-flip-events-simulated-via-hrtimer-in-vkms/). For me, It was valid to think in the possibility that VKMS was busy waiting for this vblank interrupt... therefore, as the busy wait was during the starting of pipe_crc, I added a call for igt\_wait\_for\_vblank() before igt\_pipe\_crc\_start() and then, it seems to solve the problem... but, WHY?
+I observed that something was generating an infinite busy wait for the debugfs file related to the fd. Then, I delimited this busy waiting to the line "poll(&pfd, 1, -1)" in lib/igt\_debugfs.c:igt\_pipe\_crc\_start, the line "poll(&pfd, 1, -1)". I tested that changing -1 to a finite timeout seemed to solve the problem, but it could not be a solution, since it would affect the behaviour of all IGT tests, not only the test kms\_cursor\_crc. 
+
+#### Not forever, waiting for VBlank
+
+After I have read documentations and seen other crc related tests in IGT, I looked how is the process of pipe crc creation, initialization, crc collection, stop and free of kms\_pipe\_crc\_basic, and two functions called my attention: igt\_pipe\_crc\_new\_nonblock() and igt\_wait\_for\_vblank(). At this point, I remembered a previous talk that I had with Siqueira that the [VKMS simulates vblank interrupts](https://siqueira.tech/misceleneous/add-infrastructure-for-vblank-and-page-flip-events-simulated-via-hrtimer-in-vkms/). For me, It was valid to think in the possibility that VKMS was busy waiting for this vblank interrupt... therefore, as the busy wait was during the starting of pipe_crc, I added a call for igt\_wait\_for\_vblank() before igt\_pipe\_crc\_start() and then, it seems to solve the problem... but, WHY?
 
 ```
 	igt_wait_for_vblank(data->drm_fd, data->pipe);
@@ -66,8 +72,3 @@ With this, the sequential execution of subtests passed to alternate between succ
 I hope have the answer in a next blog post.
 
 I asked for help to my mentor and took a break to check another problem: Why the subtest alpha-transparent succeed using VKMS after the implementation of XRGB but shows a message of WARNING: Suspicious CRC: All values are 0 ?
-
-
-
-
-
