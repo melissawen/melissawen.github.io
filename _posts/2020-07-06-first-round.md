@@ -62,6 +62,7 @@ supported by VKMS:
 
 1. Enhance the blend function to provide alpha composing  
 To solve warning message in pipe-%s-cursor-alpha-transparent
+* SIMD <http://ermig1979.github.io/Simd/help/group__drawing.html>
 2. Provide DPMS  
 To solve failure in pipe-%s-cursor-dpms and pipe-%s-cursor-suspend
 * <https://en.wikipedia.org/wiki/VESA_Display_Power_Management_Signaling>
