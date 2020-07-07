@@ -63,7 +63,7 @@ supported by VKMS:
 1. Enhance the blend function to provide alpha composing  
 To solve warning message in pipe-%s-cursor-alpha-transparent
 * SIMD <http://ermig1979.github.io/Simd/help/group__drawing.html>
-2. Provide DPMS  
+2. DPMS (?)  
 To solve failure in pipe-%s-cursor-dpms and pipe-%s-cursor-suspend
 * <https://en.wikipedia.org/wiki/VESA_Display_Power_Management_Signaling>
 * <https://www.kernel.org/doc/html/latest/gpu/drm-kms.html#c.drm_connector_funcs>
@@ -83,4 +83,26 @@ drivers/gpu/drm/vkms/vkms_drv.c:134:    dev->mode_config.max_width = XRES_MAX;
 drivers/gpu/drm/vkms/vkms_drv.c:135:    dev->mode_config.max_height = YRES_MAX;
 drivers/gpu/drm/vkms/vkms_drv.c:136:    dev->mode_config.preferred_depth = 24;
 drivers/gpu/drm/vkms/vkms_drv.c:137:    dev->mode_config.helper_private = &vkms_mode_config_helpers;
+```
+
+I also need to check the reason for some subtests like dpms/suspend are failing
+now, but they were working in the past, accordingly to Hannen commit message:
+
+```
+commit db7f419c06d7cce892384df464d4b609a3ea70af
+Author: Haneen Mohammed <hamohammed.sa@gmail.com>
+Date:   Thu Sep 6 08:18:26 2018 +0300
+
+    drm/vkms: Compute CRC with Cursor Plane
+    
+    This patch compute CRC for output frame with cursor and primary plane.
+    Blend cursor with primary plane and compute CRC on the resulted frame.
+    
+    This currently passes cursor-size-change, and cursor-64x64-[onscreen,
+    offscreen, sliding, random, dpms, rapid-movement] from igt
+    kms_cursor_crc tests.
+    
+    Signed-off-by: Haneen Mohammed <hamohammed.sa@gmail.com>
+    Signed-off-by: Daniel Vetter <daniel.vetter@ffwll.ch>
+    Link: https://patchwork.freedesktop.org/patch/msgid/b1749f5c90da5721a481f12740e2e370edb4a752.1536210181.git.hamohammed.sa@gmail.com
 ```
