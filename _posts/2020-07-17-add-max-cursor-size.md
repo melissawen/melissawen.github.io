@@ -5,8 +5,9 @@ date: 2020-07-17 08:00:00 -0300
 categories: randomness
 --- 
 
-To develop my GSoC project proposal, I inspected the coverage of kms_cursor_crc on VKMS.
-Using piglit, the following table shows the evolution of this coverage:
+In March, I inspected the coverage of kms_cursor_crc on VKMS to develop my
+GSoC project proposal. 
+Using piglit, I present the evolution of this coverage so far:
 
 | Result    | GSoC start| Only accepted patches | Fixes under development | 
 | ----------|:-------:|-------:|-------:|
@@ -87,8 +88,7 @@ https://drmdb.emersion.fr/capabilities (keyword 2: capabilities)
 
 3. Finding where is the DRM_CAP_CURSOR_HEIGHT value:
 `drivers/gpu/drm/drm_ioctl.c`
-(How to define `dev->mode_config.cursor_height` in vkms?)
-
+(How to define `dev->mode_config.cursor_height` in vkms?)  
 ```
 /*
  * Get device/driver capabilities
@@ -114,8 +114,7 @@ static int drm_getcap(struct drm_device *dev, void *data, struct drm_file *file_
 		break;
 [..]
 }
-```
-
+```  
 4. More information: `include/uapi/drm/drm.h`
 ```
 / *
@@ -129,8 +128,7 @@ static int drm_getcap(struct drm_device *dev, void *data, struct drm_file *file_
  * /
 #define DRM_CAP_CURSOR_WIDTH 0x8
 #define DRM_CAP_CURSOR_HEIGHT 0x9
-```
-
+```  
 5. Check the documentation for cursor_width:  
 ``` 
 **struct drm_mode_config**  
@@ -138,11 +136,10 @@ Mode configuration control structure
   
 *cursor_width*: hint to userspace for max cursor width  
 *cursor_height*: hint to userspace for max cursor height  
-```
-
+```  
 6. So, where is this `mode_config` defined in vkms?  
 Here: `drivers/gpu/drm/vkms/vkms_drv.c`
-``
+```
 static int vkms_modeset_init(struct vkms_device *vkmsdev)
 {
 	struct drm_device *dev = &vkmsdev->drm;
@@ -158,16 +155,13 @@ static int vkms_modeset_init(struct vkms_device *vkmsdev)
 
 	return vkms_output_init(vkmsdev, 0);
 }
-``
+``` 
 There is nothing about cursor here, so we need to assign maximum values to not
-take the default.
-
+take the default. 
 7. I also found that, on my intel computer, the maximum cursor is 256. Why do
-tests include 512?
-
+tests include 512? 
 8. Also, there are subtests in kms_cursor_crc for non-square cursors, but these
-tests are restricted to i915 devices. Why are they here?
-
+tests are restricted to i915 devices. Why are they here? 
 9. Finally, I develop a [simple patch][3] that increases the coverage rate by
 15 subtests. Considering the current drm-misc-next, my project state is:
 
