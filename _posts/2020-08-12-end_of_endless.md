@@ -21,7 +21,7 @@ important in the development of FLOSS came to fruition.
 I know it sounds very romantic, but after more than a month of it, breathing
 is not a simple and involuntary movement.
 
-With this patch, I was able to update my process table:
+With this patch, I was able to update my progress table on GSoC:
 
 | Result/Status    | GSoC start| After accepted patches | 
 | ----------|:-------:|-------:|
@@ -41,7 +41,7 @@ With this patch, I was able to update my process table:
 
 ## The endless wait
 
-I believe I have already talked about the problem in some other posts since it
+I believe I have already talked about the problem in some other posts as it
 has been followed me since the elaboration of my GSoC project.
 
 I was trying to solve the failure of one of the IGT kms\_cursor\_crc subtests,
@@ -52,25 +52,32 @@ cursor-alpha-opaque kept alternating between success and failure using the same
 kernel. Gradually I noticed that this was a widespread problem with the
 sequential execution of subtests in VKMS.
 
+In the beginning, I only noticed that the test crashed while waiting for a
+vblank event that was never going to happen. So I looked for solutions that
+enabled vblanks in time to prevent the subtest get stuck. However, as Daniel
+mentioned, these solutions just looked like duct-tape.
+
 ## The endless debugging
 
 Initially, I found two problems and thought that both were related to the test
-implementation. So I sent patches to IGT. In waiting for feedback, I realized
-that a previously successful subtest was currently failing, even with the
-solution I intended — bad smell. I searched the patch that modified this
+implementation. So I sent patches to IGT to correct the cleanup process and
+to force a vblank. In waiting for feedback, I realized that a previously
+successful subtest was currently failing, even with the solution I
+intended — bad smell. I searched the patch that modified this
 behavior in the history and, in fact, reversing the change let the subtests
 flow.
 
 It was then that I saw a patch sent to the DRM mailing-list in which someone
 faced a similar problem and decided to participate in the discussion. From this
-point, doubts and suspicions increased even more. However, now, I wasn't the
-only person looking for it. With our time zone differences, we were three
-sharing the findings for someone else's next shift.
+point, doubts and suspicions increased even more. However, on the bright side,
+I wasn't the only person looking for it. With our time zone differences, we
+were three sharing the findings for someone else's next shift.
 
 I sent a first patch about this issue on June 25th (in the wrong direction).
 After so much feedback, adjustments, and some other wrong attempts, the
-solution was finally accepted on August 8th.  The whole story is documented in
-the following discussions:
+solution was finally accepted on August 8th.
+
+The whole story is documented in the following discussions:
 
 1. https://patchwork.freedesktop.org/series/78813/
 2. https://patchwork.freedesktop.org/patch/373563/?series=79003
@@ -78,9 +85,11 @@ the following discussions:
 4. https://patchwork.freedesktop.org/patch/381344/?series=80043
 5. https://patchwork.freedesktop.org/series/80162/
 
-When it all seemed to come to an end, a fourth person appeared, raising doubts
-about other VKMS parts. And that was amazing! There's still a lot of work
-out there!
+And when it all seemed to come to an end, a fourth person appeared, raising
+doubts about other VKMS parts and that, in a way, was related to the problem
+at hand.
+
+And that was amazing! There's still a lot of work out there!
 
 Now I'm still a little tired of it, but I'll try to make a more technical post
 about the solution. I changed the context, going back to that will give me a
