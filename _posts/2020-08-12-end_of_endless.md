@@ -77,13 +77,13 @@ I sent a first patch about this issue on June 25th (in the wrong direction).
 After so much feedback, adjustments, and some other wrong attempts, the
 solution was finally accepted on August 8th.
 
-The whole story is documented in the following discussions:
+The whole story is documented in the following discussions (patchwork links):
 
-1. https://patchwork.freedesktop.org/series/78813/
-2. https://patchwork.freedesktop.org/patch/373563/?series=79003
-3. https://patchwork.freedesktop.org/patch/378382/?series=79758
-4. https://patchwork.freedesktop.org/patch/381344/?series=80043
-5. https://patchwork.freedesktop.org/series/80162/
+1. [Aiming in the wrong direction](https://patchwork.freedesktop.org/series/78813/)
+2. [Joining the discussion of people that observed a similar problem](https://patchwork.freedesktop.org/patch/373563/?series=79003)
+3. [Trying to hit the target ... and failing](https://patchwork.freedesktop.org/patch/378382/?series=79758)
+4. [Hey... I had this idea! But again, it was not ideal](https://patchwork.freedesktop.org/patch/381344/?series=80043)
+5. [Finally, we come to a solution](https://patchwork.freedesktop.org/series/80162/)
 
 And when it all seemed to come to an end, a fourth person appeared, raising
 doubts about other VKMS parts and that, in a way, was related to the problem
@@ -97,16 +97,13 @@ little mental work.
 
 ## For the next developments
 
-Don't keep the problem to yourself; share your doubts.
-
-When making a patch, don't forget the credits! It doesn't make much difference
+* Don't keep the problem to yourself; share your doubts.
+* When making a patch, don't forget the credits! It doesn't make much difference
 for you, but it can do for those who were with you on that journey. [See
 more](https://www.kernel.org/doc/html/v4.10/process/submitting-patches.html)
-
-Each thread/patch is full of information that can help you with other problems.
-
-If you can't dive into the code, browse through it.
-
-The mental effort is less if you write a post before changing the context.
+* Each thread/patch is full of information that can help you with other problems.
+* If you can't dive into the code, browse through it.
+* ftrace is also a good friend
+* The mental effort is less if you write a post before changing the context.
 
 P.S.: I still need to find a way to feel comfortable speaking on IRC.
