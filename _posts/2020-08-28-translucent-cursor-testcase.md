@@ -38,11 +38,12 @@ plane and capture the CRC (software)
 After implementing alpha blending using the straight alpha formula in VKMS,
 both tests were successful. However, the equation was not correct.
 
-To paint, IGT uses the library [Cairo](https://www.cairographics.org/manual/)
-and the CAIRO\_FORMAT\_ARGB32 formats for the cursor and CAIRO\_FORMAT\_RGB24
-for the primary plane. According to
+To paint, IGT uses the library [Cairo](https://www.cairographics.org/manual/).
+For primary plane, the test uses CAIRO\_FORMAT\_RGB24 and CAIRO\_FORMAT\_ARGB32
+for the cursor. According to
 [documentation](https://www.cairographics.org/manual/cairo-Image-Surfaces.html#cairo-format-t),
-this format stores the pixel color in the pre-multiplied alpha representation:
+the format ARGB32 stores the pixel color in the pre-multiplied alpha
+representation:
 
 ```
 CAIRO_FORMAT_ARGB32
@@ -53,9 +54,9 @@ Pre-multiplied alpha is used. (That is, 50% transparent red is 0x80800000, not
 0x80ff0000.) (Since 1.0)
 ```
 
-In a brief dialogue with Pekka about endianness, he showed me information from
-the DRM documentation that I didn't know about. According to the documentation,
-DRM converges with the representation used by Cairo:
+In a brief dialogue with Pekka about endianness on DRM, he showed me
+information from the DRM documentation that I didn't know about. According to
+it, DRM converges with the representation used by Cairo:
 
 ```
 
@@ -76,12 +77,14 @@ Finally, you can find there the pre-multiplied alpha blending equation:
 
 From this information, we see that both IGT and DRM use the same
 representation, but the current test cases of kms\_cursor\_crc do not show the
-defect in using the straight-alpha formula. With this in mind, I think of
-refactoring the test cases so that they could validate translucent cursors and
-"remove some zeros" from the equation. After shared thoughts with my mentor,
-Siqueira, I decided to combine the two testcases (cursor-alpha-opaque and
-cursor-alpha-transparent) into one and refactor them so that the testcase
-verifies not only extreme alpha values, but also translucent values. 
+defect in using the straight-alpha formula.
+
+With this in mind, I think of refactoring the test cases so that they could
+validate translucent cursors and "remove some zeros" from the equation. After
+shared thoughts with my mentor, Siqueira, I decided to combine the two
+testcases (cursor-alpha-opaque and cursor-alpha-transparent) into one and
+refactor them so that the testcase verifies not only extreme alpha values, but
+also translucent values. 
 
 Therefore, the submitted test case proposal follows this steps:
 1. Creates a XRGB primary plane framebuffer with black background
