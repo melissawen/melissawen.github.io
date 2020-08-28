@@ -56,7 +56,7 @@ state is destroyed](https://patchwork.kernel.org/patch/10857785/)).
 Another concern was to avoid dispersed modifications and keep the changes well
 encapsulated with writeback functions.
 
-With that, Siqueira wrapped up the v5, and sent - just fly, little bird:
+With that, Siqueira wrapped up the v5, and sent. Just fly, little bird:
 
 * [drm/vkms: Introduces writeback support](https://patchwork.freedesktop.org/series/80961/)
 
