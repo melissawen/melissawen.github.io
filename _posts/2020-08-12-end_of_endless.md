@@ -2,7 +2,7 @@
 layout: post
 title: "The end of an endless debugging of an endless wait"
 date: 2020-08-12 20:00:00 -0300
-categories: randomness
+categories: gsoc-2020
 --- 
 
 After a long debugging process, we finally reached an acceptable solution to

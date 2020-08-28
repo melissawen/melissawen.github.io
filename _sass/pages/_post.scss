@@ -46,7 +46,8 @@ section.post {
 
 // Post title
 .post-title {
-
+	color: #F36170;
+	font-size: 1.7rem;
 }
 
 .post-title-link {
@@ -96,15 +97,18 @@ a.read-more {
 
 #post h1 {
   margin: 0.5em 0 1em;
+  font-size: 2rem;
 }
 #post h2 {
   margin: 2em 0 0.8em;
   padding-bottom: 0.7em;
   border-bottom: 1px solid #ddd;
+  font-size: 1.5rem;
 }
 #post h3 {
   margin: 1.75em 0 1.2em;
   position: relative;
+  font-size: 1.2rem;
 }
 
 #page {

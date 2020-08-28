@@ -2,7 +2,7 @@
 layout: post
 title: "First patches to the DRM community"
 date: 2020-03-04 10:00:00 -0300
-categories: randomness
+categories: linux-kernel-newbie
 --- 
 
 In this post, I talk a little about my first steps to introduce myself to the
@@ -154,4 +154,3 @@ This bug took me a lot of time to comprehend the VKMS operations of drawing
 cursor, blending planes, and computing CRC, and also understand the steps of
 this IGT subtest until asserting values. See more about this situation in the
 next post.
-

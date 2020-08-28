@@ -2,7 +2,7 @@
 layout: post
 title: "Status update - connected errors"
 date: 2020-06-15 10:00:00 -0300
-categories: randomness
+categories: gsoc-2020
 --- 
 
 I spent the last week investigating the cause of two problems between VKMS and IGT that I have faced and reported in the development phase of my GSoC project proposal. One of the issues was a weird behavior, that I described as unstable, in the sequential execution of the kms\ _cursor\ _crc subtests or running the same subtest twice in a row: a subtest that passed in the first run failed in the second and returned to succeed in the third (and so on).

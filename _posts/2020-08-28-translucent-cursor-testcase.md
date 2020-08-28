@@ -2,7 +2,7 @@
 layout: post
 title: "False-positive for alpha blending"
 date: 2020-08-28 07:00:00 -0300
-categories: randomness
+categories: gsoc-2020
 --- 
 
 I recently

@@ -2,7 +2,7 @@
 layout: post
 title: "How was my first steps on IIO Subsystem"
 date: 2019-04-10 14:03:00 -0300
-categories: randomness
+categories: linux-kernel-newbie
 ---
 
 I've already started my contribution journey. However, I forgot to write about it earlier.

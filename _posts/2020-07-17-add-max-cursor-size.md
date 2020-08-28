@@ -2,10 +2,10 @@
 layout: post
 title: "Increasing test coverage in VKMS - max square cursor size"
 date: 2020-07-17 08:00:00 -0300
-categories: randomness
+categories: gsoc-2020
 --- 
 
-In March, I inspected the coverage of kms_cursor_crc on VKMS to develop my
+In March, I inspected the coverage of kms\_cursor\_crc on VKMS to develop my
 GSoC project proposal. 
 Using piglit, I present the evolution of this coverage so far:
 
@@ -37,7 +37,7 @@ As a first step, I decided to examine and solve issues that affected the test
 results in a general way. the instability. Solving the instability first (or at
 least identify what was going on) would make the work more consistent and
 fluid, since I would no longer need to double-check each subtest result and, in
-one running of the entire kms_cursor_crc test I could check the absent features
+one running of the entire kms\_cursor\_crc test I could check the absent features
 or errors.  However, in this investigation, some problems were more linked to
 IGT and others to VKMS. Identifying who is the "guilty" was not simple, and
 some false charges happened. 
@@ -81,25 +81,23 @@ Therefore, these are the references that helped me to find the keywords and
 information related to my problem "the cursor size":
 
 1. Comparing an AMD device with VKMS device: https://drmdb.emersion.fr/devices
-(keyword 1: DRM_CAP_CURSOR_HEIGHT)
-
-2. Checking max cursor sizes per driver:
-https://drmdb.emersion.fr/capabilities (keyword 2: capabilities)
-
-3. Finding where is the DRM_CAP_CURSOR_HEIGHT value:
-`drivers/gpu/drm/drm_ioctl.c`
-(How to define `dev->mode_config.cursor_height` in vkms?)  
-```
-/*
- * Get device/driver capabilities
- */
-static int drm_getcap(struct drm_device *dev, void *data, struct drm_file *file_priv)
-{
+   (keyword 1: DRM\_CAP\_CURSOR\_HEIGHT)
+2. Checking max cursor sizes per driver: https://drmdb.emersion.fr/capabilities
+   (keyword 2: capabilities)
+3. Finding where is the DRM\_CAP\_CURSOR\_HEIGHT value:
+   `drivers/gpu/drm/drm_ioctl.c`\
+   (How to define ` dev->mode_config.cursor_height ` in vkms?)
+   ```
+   /*
+    * Get device/driver capabilities
+    */
+   static int drm_getcap(struct drm_device *dev, void *data, struct drm_file *file_priv)
+   {
 	struct drm_get_cap *req = data;
 	struct drm_crtc *crtc;
 
 	req->value = 0;
-[..]
+   [..]
 	case DRM_CAP_CURSOR_WIDTH:
 		if (dev->mode_config.cursor_width)
 			req->value = dev->mode_config.cursor_width;
@@ -112,36 +110,40 @@ static int drm_getcap(struct drm_device *dev, void *data, struct drm_file *file_
 		else
 			req->value = 64;
 		break;
-[..]
-}
-```  
+   [..]
+   }
+   
+   ``` \
 4. More information: `include/uapi/drm/drm.h`
-```
-/ *
- * The CURSOR_WIDTH and CURSOR_HEIGHT capabilities return a valid widthxheight
- * combination for the hardware cursor. The intention is that a hardware
- * agnostic userspace can query a cursor plane size to use.
- *
- * Note that the cross-driver contract is to merely return a valid size;
- * drivers are free to attach another meaning on top, eg. i915 returns the
- * maximum plane size.
- * /
-#define DRM_CAP_CURSOR_WIDTH 0x8
-#define DRM_CAP_CURSOR_HEIGHT 0x9
-```  
-5. Check the documentation for cursor_width:  
-``` 
-**struct drm_mode_config**  
-Mode configuration control structure  
-  
-*cursor_width*: hint to userspace for max cursor width  
-*cursor_height*: hint to userspace for max cursor height  
-```  
-6. So, where is this `mode_config` defined in vkms?  
-Here: `drivers/gpu/drm/vkms/vkms_drv.c`
-```
-static int vkms_modeset_init(struct vkms_device *vkmsdev)
-{
+
+   ```
+   / *
+    * The CURSOR_WIDTH and CURSOR_HEIGHT capabilities return a valid widthxheight
+    * combination for the hardware cursor. The intention is that a hardware
+    * agnostic userspace can query a cursor plane size to use.
+    *
+    * Note that the cross-driver contract is to merely return a valid size;
+    * drivers are free to attach another meaning on top, eg. i915 returns the
+    * maximum plane size.
+    * /
+   #define DRM_CAP_CURSOR_WIDTH 0x8
+   #define DRM_CAP_CURSOR_HEIGHT 0x9
+
+   ```
+5. Check the documentation for cursor\_width:
+   ``` 
+   **struct drm_mode_config**
+   Mode configuration control structure
+     
+   *cursor_width*: hint to userspace for max cursor width
+   *cursor_height*: hint to userspace for max cursor height
+   
+   ```
+6. So, where is this `mode_config` defined in vkms?\
+   Here: `drivers/gpu/drm/vkms/vkms_drv.c`
+   ```
+   static int vkms_modeset_init(struct vkms_device *vkmsdev)
+   {
 	struct drm_device *dev = &vkmsdev->drm;
 
 	drm_mode_config_init(dev);
@@ -154,16 +156,18 @@ static int vkms_modeset_init(struct vkms_device *vkmsdev)
 	dev->mode_config.helper_private = &vkms_mode_config_helpers;
 
 	return vkms_output_init(vkmsdev, 0);
-}
-``` 
-There is nothing about cursor here, so we need to assign maximum values to not
-take the default. 
+   }
+   ```
+   There is nothing about cursor here, so we need to assign maximum values to not
+   take the default. 
 7. I also found that, on my intel computer, the maximum cursor is 256. Why do
-tests include 512? 
-8. Also, there are subtests in kms_cursor_crc for non-square cursors, but these
-tests are restricted to i915 devices. Why are they here? 
+   tests include 512? 
+8. Also, there are subtests in kms\_cursor\_crc for non-square cursors, but these
+   tests are restricted to i915 devices. Why are they here? 
 9. Finally, I develop a [simple patch][3] that increases the coverage rate by
-15 subtests. Considering the current drm-misc-next, my project state is:
+   15 subtests.
+   
+Considering the current drm-misc-next, my project state is:
 
 | Name      | Results | 
 | ----------|:-------:|
@@ -208,21 +212,19 @@ handle. Subtests with non-square cursors mean 16 skips.
 #### Lessons learned
 
 1. For me, IRC conversations are inspiring and also show community pulsing.
-Part of what I question in my master's research is the lack of interest in
-academic studies in using IRC as a means of understanding the community
-under investigation.  
-One of the things I like about IRC is that, unlike other instant messengers
-today, when we are there, we are usually sitting in front of the computer
-(our work tool). I mean, we are not (I think) lying in a hammock on the
-beach, for example. Ok, there could be exceptions. :)  
-But to be honest, I hardly talk on a channel; I am usually just watching.
-
+   Part of what I question in my master's research is the lack of interest in
+academic studies in using IRC as a means of understanding the community under
+investigation.  
+   One of the things I like about IRC is that, unlike other
+instant messengers today, when we are there, we are usually sitting in front of
+the computer (our work tool). I mean, we are not (I think) lying in a hammock
+on the beach, for example. Ok, there could be exceptions. :)  
+   But to be honest, I rarely talk on a channel; I am usually just watching.
 2. There are cases where the complexity lies in understanding what already
-exists instead of in developing new features. I still don't know if it's
+   exists instead of in developing new features. I still don't know if it's
 frustrating or satisfying.
-
-3. I don't know if I could understand things without using ctags. The ctags
-was a great tip from Siqueira even in FLUSP times.
+3. I don't know if I could understand things without using ctags. The ctags was
+   a great tip from Siqueira even in FLUSP times.
 
 [1]: https://patchwork.freedesktop.org/series/74939/
 [2]: https://patchwork.kernel.org/patch/10590131/

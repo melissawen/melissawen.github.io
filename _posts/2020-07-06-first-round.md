@@ -2,7 +2,7 @@
 layout: post
 title: "GSoC First Phase - Achievements"
 date: 2020-07-06 10:00:00 -0300
-categories: randomness
+categories: gsoc-2020
 --- 
 
 The first round just passed so fast, and what I did?

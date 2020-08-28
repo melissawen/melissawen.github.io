@@ -2,7 +2,7 @@
 layout: post
 title: "If a warning remains, the job is not finished."
 date: 2020-08-19 18:00:00 -0300
-categories: randomness
+categories: gsoc-2020
 --- 
 
 In the past few weeks, I was examining two issues on vkms: development of

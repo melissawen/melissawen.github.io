@@ -2,7 +2,7 @@
 layout: post
 title: "Another day, another mistery"
 date: 2020-08-27 09:00:00 -0300
-categories: randomness
+categories: gsoc-2020
 --- 
 
 As a newbie, I consider debugging as a study guided.  During the process, I

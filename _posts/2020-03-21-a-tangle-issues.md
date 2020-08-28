@@ -2,7 +2,7 @@
 layout: post
 title: "A tangle of issues"
 date: 2020-03-23 14:00:00 -0300
-categories: randomness
+categories: linux-kernel-newbie
 --- 
 
 After I began a simple change in the cursor behavior in VKMS, many related

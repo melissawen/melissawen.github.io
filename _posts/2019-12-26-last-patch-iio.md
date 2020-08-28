@@ -2,7 +2,7 @@
 layout: post
 title: "The last patch sent in 2019"
 date: 2019-12-26 17:40:00 -0300
-categories: randomness
+categories: linux-kernel-newbie
 ---
 
 2019 was a year of deepening and maturing my MSc research on FLOSS. It was also a year of introduction to the universe of contributions to the kernel Linux. I had my first achievements as a newcomer to the community. I sent eight patches to the IIO, the first one was a code-style contribution, but in the others, I made some improvements for an IIO driver that was (and still is) in the staging tree. These patches helped me to understand a little of the logic and complexity involved in Linux kernel development.
@@ -20,10 +20,3 @@ Finally, the flow of sending a bug fix is ​​somewhat particular in the Linux
 Shortly after this patch, I had to stop my contributions to write my qualifying exam manuscript. I submitted my research project for qualification in July, but I no longer returned to send patches to IIO. 
 
 However, I didn't stop my Linux development activities out there. I started preparing to contribute to another Linux subsystem, DRM. To this end, I spent the last months of 2019 reading a little more about the subsystem and preparing my development environment. I hope 2020 is a year to dive into Linux and become a skilled kernel developer!
-
-
-
-
-
-
-

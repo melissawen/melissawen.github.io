@@ -2,7 +2,7 @@
 layout: post
 title: "Walking in the KMS\_CURSOR\_CRC test"
 date: 2020-06-03 15:00:00 -0300
-categories: randomness
+categories: gsoc-2020
 --- 
 
 In this post, I describe the steps involved in the execution of a

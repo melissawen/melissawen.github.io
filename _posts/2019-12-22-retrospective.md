@@ -2,7 +2,7 @@
 layout: post
 title: "Insights about 2019"
 date: 2019-12-22 17:03:00 -0300
-categories: randomness
+categories: linux-kernel-newbie
 ---
 
 The year is coming to an end, and although it was a year of new experiences in the FLOSS community, I have shared little about this new universe that I am still beginning to know and understand.
@@ -18,10 +18,3 @@ In this journey, a FLOSS development group emerged at the university, FLUSP (FLO
 Contributions in a scoreboard may no longer exist, but in the next few posts, I want to talk a little bit about my Linux contribution journey with some patches for the IIO subsystem.
 
 Here we go!
-
-
-
-
-
-
-

@@ -2,7 +2,7 @@
 layout: post
 title: "Everyone makes a script"
 date: 2020-05-20 15:00:00 -0300
-categories: randomness
+categories: gsoc-2020
 --- 
 
 Meanwhile, in GSoC:

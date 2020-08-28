@@ -2,7 +2,7 @@
 layout: post
 title: "Status update - Tie up loose ends before starting"
 date: 2020-06-02 15:00:00 -0300
-categories: randomness
+categories: gsoc-2020
 --- 
 
 As the GSoC coding time officially started this week (01/06/2020), this post is
