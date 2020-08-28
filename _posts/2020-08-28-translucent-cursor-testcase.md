@@ -3,6 +3,7 @@ layout: post
 title: "False-positive for alpha blending"
 date: 2020-08-28 07:00:00 -0300
 categories: gsoc-2020
+tags: IGT DRM alpha-blending
 --- 
 
 I recently

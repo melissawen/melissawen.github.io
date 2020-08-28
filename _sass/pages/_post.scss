@@ -9,7 +9,7 @@
   -webkit-transform: translate3d(0,0,1px);
   transform: translate3d(0,0,1px);
   @include media-query($small-screen) {
-    padding: 50px 30px 0;
+    padding: 50px 150px 0 50px;
   }
   @include media-query($medium-screen) {
     height: 100vh;
@@ -33,6 +33,10 @@ section.post {
 	margin-bottom: 80px;
 }
 
+.post-description{
+  font-size: 16px;
+}
+
 // Back home button
 
 .back-home a {
@@ -46,7 +50,6 @@ section.post {
 
 // Post title
 .post-title {
-	color: #F36170;
 	font-size: 1.7rem;
 }
 
@@ -109,6 +112,10 @@ a.read-more {
   margin: 1.75em 0 1.2em;
   position: relative;
   font-size: 1.2rem;
+}
+
+.post-content{
+  font-size: 18px;
 }
 
 #page {
