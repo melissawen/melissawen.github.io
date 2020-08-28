@@ -1,0 +1,20 @@
+- name: "ICSE 2020 New Ideas and Emerging Results"
+  descr: "Understanding FLOSS through community publications: Strategies for Grey Literature Review"
+  link: https://2020.icse-conferences.org/details/icse-2020-New-Ideas-and-Emerging-Results/10/Understanding-FLOSS-through-community-publications-Strategies-for-Grey-Literature-Re
+
+- name: "Journal of Systems and Software"
+  descr: "Leading successful government-academia collaborations using FLOSS and agile values"
+  doi: https://doi.org/10.1016/j.jss.2020.110548
+
+- name: "IFIP International Conference on Open Source Systems"
+  descr: "FLOSS Project Management in Government-Academia Collaboration"
+  doi: https://doi.org/10.1007/978-3-319-92375-8_2
+
+- name: "IEEE Software"
+  descr: "Continuous Delivery: Building Trust in a Large-Scale, Complex Government Organization"
+  doi: https://doi.org/10.1109/MS.2018.111095426
+
+- name: "Proceedings of the 13th International Symposium on Open Collaboration"
+  descr: "Brazilian Public Software Portal: an integrated platform for collaborative development"
+  doi: https://doi.org/10.1145/3125433.3125471
+

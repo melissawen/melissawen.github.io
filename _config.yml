@@ -1,122 +1,71 @@
-# SITE CONFIGURATION
-baseurl: ""
-url: "https://melissawen.github.io"
-title: Wen.OnWeb # site's title
-description: "Melissa Wen Website - blog posts and pages" # used by search engines
-exclude:
-- portfolio
+#
+###################################
+# Site wide configuration
+####################################
+#
+title: Wen.onweb
+email:
+description: Sofware and Development
+url: # the base hostname & protocol for your site
+keywords: ["blog", "jekyll"]
 
-defaults:
-  - 
-    scope:
-      path: "" # an empty string here means all files in the project
-    values:
-      image: assets/img/triangle.png # seo tag
+#
+###################################
+# Jekyll configuration
+####################################
+#
+timezone:          Europe/Lisbon
+markdown:          kramdown
+highlighter:       rouge
+excerpt_separator: <!--more-->
+permalink:         /articles/:year-:month/:title
 
-# THEME-SPECIFIC CONFIGURATION
-theme_settings:
-  # Meta
-  #avatar: assets/img/triangle.png
-  color_image: /assets/img/lineart.png # In post when you set color
-  favicon: assets/favicon.ico
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
 
-  # Header and footer text
-  header_text:
-  header_feature_image:
-  footer_text: >
-    Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
-
-  # Icons
-  rss: true  # Make sure you created a feed.xml with feed.xml layout
-  email_address:
-  behance:
-  bitbucket:
-  dribbble:
-  facebook:
-  flickr:
-  gitlab: "melissawen"
-  github: "melissawen"
-  google_plus:
-  instagram: "melissa.wen.br"
-  keybase:
-  linkedin:  # Full URL
-  pinterest:
-  reddit:
-  soundcloud:
-  stack_exchange:  # Full URL
-  steam:
-  tumblr:
-  twitter:  "melissasrw"
-  vimeo:
-  wordpress:
-  youtube:
-
-  # Sharing options
-  share_buttons:
-    facebook:
-    twitter: true
-    tumblr:
-    pinterest:
-    pocket:
-    reddit:
-    linkedin:
-    wordpress:
-    email: true
-
-  # Scripts / Features 
-  google_analytics: # Tracking ID, e.g. "UA-000000-01"
-  disqus_shortname:
-  katex: true # Enable if using math markup
-
-  # Localization strings
-  str_follow_on: "Follow on"
-  str_rss_follow: "Follow RSS feed"
-  str_share_on: "Share on"
-  str_add_to: "Add to"
-  str_email: "Email"
-  str_tweet: "Tweet"
-  str_pin_it: "Pin it"
-  str_next_post: "Next post"
-  str_previous_post: "Previous post"
-  str_next_page: "Next"
-  str_previous_page: "Prev"
-  str_javascript_required_disqus: "Please enable JavaScript to view comments."
-
-  # Post navigation
-  post_navigation: true
-
-  # Colours, typography and padding
-  # Open the "_sass > base" folder, and open "_variables.scss"
-
-# PAGINATION
-paginate: 5
-paginate_path: "blog/page:num"
-
-# AUTHORS
-authors:
-  mhagnumdw: # author-id
-    name: MhagnumDw
-    avatar: "assets/img/avatars/mhagnumdw_avatar.jpg"
-    url: 
-  sylhare:
-    name: Sylhare
-    avatar: "assets/img/avatars/sylhare_avatar.png"
-    url: "https://github.com/sylhare"
-
-# PORTFOLIO
-collections:
-  portfolio:
-    output: true
-    permalink: /:collection/:name
-
-# BUILD SETTINGS
-markdown: kramdown
-highlighter: rouge
-sass:
-  sass_dir: _sass
-  style: :compressed
-plugins: [jekyll-paginate, jekyll-seo-tag]
-exclude: [".jekyll-cache", "Gemfile", "Gemfile.lock", "type-on-strap.gemspec", "*.gem", ".idea",
-          "LICENSE", "README.md", "screenshot.png", "assets/package.json", "assets/node_modules", "assets/gulpfile.js"]
-# theme: type-on-strap # Uncomment if using the theme as a jekyll theme gem
-remote_theme: sylhare/Type-on-Strap # If using as a remote_theme in github
+#
+###################################
+# Site Owner configuration
+####################################
+#
+owner:
+  name: WEN.ONWEB
+  avatar: melissa-wen.jpg
+  job: "Melissa Wen"
+  bio: "Software Developer / MsC Student / Brazilian"
+  email:
+  disqus-shortname:
+  twitter: melissasrw
+  facebook: #username
+  google:
+    plus: #username
+    analytics: UA-170178218-1
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+  github: melissawen
+  gitlab: melissawen
+  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
+  linkedin: melissa-wen-1b4bb539
+  skype: #username
+  xing: #username
+  instagram: #username
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
+  weibo: #username
+  flickr: #username
+  500px: #username
+  codepen: #username
+  reddit: #username
+  telegram: #username

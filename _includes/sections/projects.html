@@ -1,0 +1,18 @@
+<h1><span data-i18n="skills.my_skills">Publications</span></h1>
+
+{% for project in site.data.index.projects %}
+    <div class="row">
+            <div class="col">
+                <p style="margin: 10px 0 0 0"><strong>{{ project.descr }}</strong></h2>
+                <p style="margin: 0">{{ project.name }}</p>
+
+                {% if project.link %}
+                <a href="{{ project.link }} "><i class="fa fa-fw fa-external-link"></i>Link</a>
+                {% endif %}
+                {% if project.doi %}
+                <a href="{{ project.doi }} "><i class="fa fa-fw fa-file-text"></i>DOI</a>
+                {% endif %}
+
+            </div>
+    </div>
+{% endfor %}

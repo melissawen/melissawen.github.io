@@ -1,274 +1,789 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
-    <script defer=true src="/assets/js/main.min.js"></script>
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="/assets/css/main.css">
 
-    <!--Favicon-->
-    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 
-    <!-- Canonical -->
-    <link rel="canonical" href="http://localhost:4000/">
 
-    <!-- RSS -->
-    <link rel="alternate" type="application/atom+xml" title="wen.onweb" href="http://localhost:4000/feed.xml"/>
-    
-    
 
-    <!-- KaTeX 0.8.3 -->
-    <!-- if you have any issue check https://github.com/KaTeX/KaTeX -->
-    
-    <script src="/assets/js/vendor/katex.min.js"></script>
-    
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Sofware and Development">
+  <meta name="keywords" content="blog and jekyll">
+  <meta name="author" content="Wen.onweb">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5f5">
 
-    <!-- Google Analytics -->
-     <!-- End Google Analytics -->
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Wen.onweb">
+  <meta name="twitter:description" content="Sofware and Development">
+  
+    <meta property="twitter:image" content="http://localhost:4000/img/leonids-logo.png">
+  
 
-    <!-- seo tags -->
-    <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>wen.onweb | A website with blog posts and pages</title>
-<meta name="generator" content="Jekyll v3.8.6" />
-<meta property="og:title" content="wen.onweb" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="A website with blog posts and pages" />
-<meta property="og:description" content="A website with blog posts and pages" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
-<meta property="og:site_name" content="wen.onweb" />
-<meta property="og:image" content="http://localhost:4000/assets/img/triangle.png" />
-<script type="application/ld+json">
-{"image":"http://localhost:4000/assets/img/triangle.png","url":"http://localhost:4000/","name":"wen.onweb","description":"A website with blog posts and pages","headline":"wen.onweb","@type":"WebSite","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="http://localhost:4000/">
+  <meta property="og:title" content="Wen.onweb">
+  <meta property="og:description" content="Sofware and Development">
+  
+    <meta property="og:image" content="http://localhost:4000/img/leonids-logo.png">
+  
+  <title>Wen.onweb</title>
 
-    <!-- Manual seo tags -->
-    <!--
-    <title> wen.onweb</title>
-    <meta name="description" content="">
-    -->
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="alternate" type="application/rss+xml" title="Wen.onweb" href="http://localhost:4000/feed.xml" />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
 </head>
 
-  <body>
-    <header class="site-header">
-    
-    <!-- Logo and title -->
-	<div class="branding">
-		<a href="/">
-			<img alt="logo img" class="avatar" src="" />
-		</a>
 
-		<h1 class="site-title">
-			<a aria-label="wen.onweb" href="/">
-        wen.onweb
-      </a>
-		</h1>
-	</div>
-    
-    <!-- Toggle menu -->
-    <nav class="clear">
-    <a aria-label="pull" id="pull" class="toggle" href="#">
-    <i class="fa fa-bars fa-lg"></i>
-    </a>
-    
-    <!-- Menu -->
-    <ul class="hide">
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
         
+
+<div class="cover-card table-cell table-middle">
+  
+  <a href="http://localhost:4000/">
+    <img src="http://localhost:4000/img/melissa-wen.jpg" alt="" class="avatar">
+  </a>
+  
+  <a href="http://localhost:4000/" class="author_name">WEN.ONWEB</a>
+  <span class="author_job">Melissa Wen</span>
+  <span class="author_bio mbm">Software Developer / MsC Student / Brazilian</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/">home</a>
+      </li>
+       
+      <li class="nav-item">
+        <a href="http://localhost:4000/archive/">Archive</a>
+      </li>
+          
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+      </li>
+            
+      <li class="nav-item">
+        <a href="http://localhost:4000/resume/">Resume</a>
+      </li>
         
-        
-            
-            
-        
-            
-            <li class="separator"> | </li>
-            <li>
-                <a class="clear" aria-label="It's Me" title="It's Me" href="/about/">
-                     It's Me 
-                </a>
-            </li>
-            
-            
-        
-            
-            
-        
-            
-            
-        
-            
-            <li class="separator"> | </li>
-            <li>
-                <a class="clear" aria-label="Photos" title="Photos" href="/photos/">
-                     Photos 
-                </a>
-            </li>
-            
-            
-        
-            
-            
-        
-            
-            <li class="separator"> | </li>
-            <li>
-                <a class="clear" aria-label="Search" title="Search" href="/search/">
-                     <i class="fa fa-search" aria-hidden="true"></i>
-                    
-                </a>
-            </li>
-            
-            
-        
-            
-            <li class="separator"> | </li>
-            <li>
-                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
-                     <i class="fa fa-tags" aria-hidden="true"></i>
-                    
-                </a>
-            </li>
-            
-            
-        
+      <li class="nav-item">
+        <a href="http://localhost:4000/tags/">Tags</a>
+      </li>
+         
     </ul>
-        
-	</nav>
-</header>
-
-    <div class="content">
-      <div class="home">
-  
-  <div id="main" class="call-out"
-  style="background-image: url('/assets/img/photos/flower.jpg')">
-    <h1> melissa-wen is up-to-date </h1>
-  </div>
-  
-
-  <div class="posts">
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
     
-    <div class="post-teaser">
+    <li><a href="http://twitter.com/melissasrw" class="social-link-item" target="_blank"><i class="fa fa-fw fa-twitter"></i></a></li>
+    
+    
+    <li><a href="http://linkedin.com/in/melissa-wen-1b4bb539" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    
+    
+    
+    
+    <li><a href="http://github.com/melissawen" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    <li><a href="http://gitlab.com/u/melissawen" class="social-link-item" target="_blank"><i class="fa fa-fw fa-gitlab"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
         
-        <span>
-          <header>
-            <h1>
-              <a aria-label="Hello World!" class="post-link" href="/randomness/2019/08/27/hello-world.html">
-                Hello World!
-              </a>
-            </h1>
-            
-
-<div class="post-info">
-    <p class="meta">
-      August 27, 2019
-    </p></div>
-
-          </header>
-          <div class="excerpt">
-              First post. Just to fill my blog with a post.
-
-          </div>
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        13 AUG 2020
       </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#randomness">randomness</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2020-08/end_of_endless" class="post-title" title="The end of an endless debugging of an endless wait">The end of an endless debugging of an endless wait</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p>After a long debugging process, we finally reached an acceptable solution to
+the problem of running sequential subtests of IGT tests involving CRC capture
+using the VKMS.</p>
+
+<p>Despite all the time, uncertainty, and failures, this was, by far, one of the
+greatest lessons learned in my journey of FLOSS developer. With
+this experience, I learned a lot about how VKMS works, evolved technically,
+experienced different feelings, and interacted with people I may never meet in
+person. These people were sharing some of their knowledge with me in open and
+accessible communication. The interactions allowed us to build together a more
+suitable and effective solution, and at that moment, everything I thought was
+important in the development of FLOSS came to fruition.</p>
+
+<p>I know it sounds very romantic, but after more than a month of it, breathing
+is not a simple and involuntary movement.</p>
+
+<p>With this patch, I was able to update my progress table on GSoC:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Result/Status</th>
+      <th style="text-align: center">GSoC start</th>
+      <th style="text-align: right">After accepted patches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>pass</td>
+      <td style="text-align: center">7</td>
+      <td style="text-align: right">24 (+17)</td>
+    </tr>
+    <tr>
+      <td>warn</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: right">1</td>
+    </tr>
+    <tr>
+      <td>fail</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: right">0 (-2)</td>
+    </tr>
+    <tr>
+      <td>skip</td>
+      <td style="text-align: center">236</td>
+      <td style="text-align: right">221 (-15)</td>
+    </tr>
+    <tr>
+      <td>crash</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: right">0</td>
+    </tr>
+    <tr>
+      <td>timeout</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: right">0</td>
+    </tr>
+    <tr>
+      <td>incomplete</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: right">0</td>
+    </tr>
+    <tr>
+      <td>dmesg-warn</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: right">0</td>
+    </tr>
+    <tr>
+      <td>dmesg-fail</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: right">0</td>
+    </tr>
+    <tr>
+      <td>changes</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: right">0</td>
+    </tr>
+    <tr>
+      <td>fixes</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: right">0</td>
+    </tr>
+    <tr>
+      <td>regressions</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: right">0</td>
+    </tr>
+    <tr>
+      <td>total</td>
+      <td style="text-align: center">246</td>
+      <td style="text-align: right">246</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="the-endless-wait">The endless wait</h2>
+
+<p>I believe I have already talked about the problem in some other posts as it
+has been followed me since the elaboration of my GSoC project.</p>
+
+<p>I was trying to solve the failure of one of the IGT kms_cursor_crc subtests,
+the cursor-alpha-transparent. As this subtest has an implementation similar to
+the cursor-alpha-opaque (that was passing), I used both to observe the
+manipulation of ARGB -&gt; XRGB happening in CRC capture. However, strangely, the
+cursor-alpha-opaque kept alternating between success and failure using the same
+kernel. Gradually I noticed that this was a widespread problem with the
+sequential execution of subtests in VKMS.</p>
+
+<p>In the beginning, I only noticed that the test crashed while waiting for a
+vblank event that was never going to happen. So I looked for solutions that
+enabled vblanks in time to prevent the subtest get stuck. However, as Daniel
+mentioned, these solutions just looked like duct-tape.</p>
+
+<h2 id="the-endless-debugging">The endless debugging</h2>
+
+<p>Initially, I found two problems and thought that both were related to the test
+implementation. So I sent patches to IGT to correct the cleanup process and
+to force a vblank. In waiting for feedback, I realized that a previously
+successful subtest was currently failing, even with the solution I
+intended — bad smell. I searched the patch that modified this
+behavior in the history and, in fact, reversing the change let the subtests
+flow.</p>
+
+<p>It was then that I saw a patch sent to the DRM mailing-list in which someone
+faced a similar problem and decided to participate in the discussion. From this
+point, doubts and suspicions increased even more. However, on the bright side,
+I wasn’t the only person looking for it. With our time zone differences, we
+were three sharing the findings for someone else’s next shift.</p>
+
+<p>I sent a first patch about this issue on June 25th (in the wrong direction).
+After so much feedback, adjustments, and some other wrong attempts, the
+solution was finally accepted on August 8th.</p>
+
+<p>The whole story is documented in the following discussions (patchwork links):</p>
+
+<ol>
+  <li><a href="https://patchwork.freedesktop.org/series/78813/">Aiming in the wrong direction</a></li>
+  <li><a href="https://patchwork.freedesktop.org/patch/373563/?series=79003">Joining the discussion of people that observed a similar problem</a></li>
+  <li><a href="https://patchwork.freedesktop.org/patch/378382/?series=79758">Trying to hit the target … and failing</a></li>
+  <li><a href="https://patchwork.freedesktop.org/patch/381344/?series=80043">Hey… I had this idea! But again, it was not ideal</a></li>
+  <li><a href="https://patchwork.freedesktop.org/series/80162/">Finally, we come to a solution</a></li>
+</ol>
+
+<p>And when it all seemed to come to an end, a fourth person appeared, raising
+doubts about other VKMS parts and that, in a way, was related to the problem
+at hand.</p>
+
+<p>And that was amazing! There’s still a lot of work out there!</p>
+
+<p>Now I’m still a little tired of it, but I’ll try to make a more technical post
+about the solution. I changed the context, going back to that will give me a
+little mental work.</p>
+
+<h2 id="for-the-next-developments">For the next developments</h2>
+
+<ul>
+  <li>Don’t keep the problem to yourself; share your doubts.</li>
+  <li>When making a patch, don’t forget the credits! It doesn’t make much difference
+for you, but it can do for those who were with you on that journey. <a href="https://www.kernel.org/doc/html/v4.10/process/submitting-patches.html">See
+more</a></li>
+  <li>Each thread/patch is full of information that can help you with other problems.</li>
+  <li>If you can’t dive into the code, browse through it.</li>
+  <li>ftrace is also a good friend</li>
+  <li>The mental effort is less if you write a post before changing the context.</li>
+</ul>
+
+<p>P.S.: I still need to find a way to feel comfortable speaking on IRC.</p>
+
+      </p>
     </div>
     
-</div>
-
-
-
 
     
-</div>
 
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        17 JUL 2020
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#randomness">randomness</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2020-07/add-max-cursor-size" class="post-title" title="Increasing test coverage in VKMS - max square cursor size">Increasing test coverage in VKMS - max square cursor size</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p>In March, I inspected the coverage of kms_cursor_crc on VKMS to develop my
+GSoC project proposal. 
+Using piglit, I present the evolution of this coverage so far:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Result</th>
+      <th style="text-align: center">GSoC start</th>
+      <th style="text-align: right">Only accepted patches</th>
+      <th style="text-align: right">Fixes under development</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>pass</td>
+      <td style="text-align: center">7</td>
+      <td style="text-align: right">22</td>
+      <td style="text-align: right">24</td>
+    </tr>
+    <tr>
+      <td>warn</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">1</td>
+    </tr>
+    <tr>
+      <td>fail</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: right">3</td>
+      <td style="text-align: right">0</td>
+    </tr>
+    <tr>
+      <td>skip</td>
+      <td style="text-align: center">236</td>
+      <td style="text-align: right">221</td>
+      <td style="text-align: right">221</td>
+    </tr>
+    <tr>
+      <td>crash</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+    </tr>
+    <tr>
+      <td>timeout</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+    </tr>
+    <tr>
+      <td>incomplete</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+    </tr>
+    <tr>
+      <td>dmesg-warn</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+    </tr>
+    <tr>
+      <td>dmesg-fail</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+    </tr>
+    <tr>
+      <td>changes</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+    </tr>
+    <tr>
+      <td>fixes</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+    </tr>
+    <tr>
+      <td>regressions</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: right">0</td>
+      <td style="text-align: right">0</td>
+    </tr>
+    <tr>
+      <td>total</td>
+      <td style="text-align: center">246</td>
+      <td style="text-align: right">246</td>
+      <td style="text-align: right">246</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>+ Instability in the sequential run of subtests</strong>; ie, although the statistic
+showing that 7 tests are passing in the beggining, this result was only clear after a
+double-check because when running all subtests sequentially, 8 tests fails and
+only 1 succeed;</p>
+
+<p><strong>+ Warning or Failure ?</strong> <a href="https://patchwork.freedesktop.org/series/74939/">My fix proposal for the pipe-A-cursor-alpha-transparent test
+was passing with a warning (CRC all zero)</a></p>
+
+<p>As a first step, I decided to examine and solve issues that affected the test
+results in a general way. the instability. Solving the instability first (or at
+least identify what was going on) would make the work more consistent and
+fluid, since I would no longer need to double-check each subtest result and, in
+one running of the entire kms_cursor_crc test I could check the absent features
+or errors.  However, in this investigation, some problems were more linked to
+IGT and others to VKMS. Identifying who is the “guilty” was not simple, and
+some false charges happened.</p>
+
+<p>This is a little long story and <strong>deserves another post focused on the issue</strong>.
+The effective solution has not yet been found, but it has already been realized
+that the proper bug-fix achieves:</p>
+<ul>
+  <li>The stability of the sequential execution of subtests;</li>
+  <li>The success of the following subtests: pipe-A-cursor-dpms pipe-A-cursor-suspend</li>
+</ul>
+
+<p>As we don’t have that yet, well, I’ll focus on this post in describing the way
+to allow testing of different cursor sizes in vkms.</p>
+
+<h2 id="the-maximum-cursor-size">The maximum cursor size</h2>
+
+<p>In 2018, one of the Haneen contributions to vkms was <a href="https://patchwork.kernel.org/patch/10590131/">adding support for the
+cursor plane</a>. In this implementation, the cursor has a standard maximum
+supported size 64x64, which limited the coverage of the kms_cursor_crc to
+only cursor subtests with this size.</p>
+
+<p>The IGT tests cursor sizes from 64 to 512 (powers of 2), but how to enable
+cursor larger than the standard?</p>
+
+<p>Initially, I thought I needed to develop some functionality from scratch, maybe
+do this by drawing in larger sizes… as a good beginner :) So I started to
+read some materials and check the codes of other drivers to find out how to do
+this.</p>
+
+<p>During this stage, for some kind of universe coincidence (mystic), I came
+across a conversation on the IRC on the topic “cursor sizes.” This
+conversation gave me some references that led me to the right work path.</p>
+
+<h3 id="ctags-driven-investigation">Ctags-driven investigation</h3>
+
+<p>I tend to investigate Linux trough keywords (like a ctags on the head?). This
+approach helps me to narrow the scope of reading and attempts. The Linux kernel
+is frighteningly large, and I know that I still need many years to understand
+things as a whole (if possible).</p>
+
+<p>Therefore, these are the references that helped me to find the keywords and
+information related to my problem “the cursor size”:</p>
+
+<ol>
+  <li>
+    <p>Comparing an AMD device with VKMS device: https://drmdb.emersion.fr/devices
+(keyword 1: DRM_CAP_CURSOR_HEIGHT)</p>
+  </li>
+  <li>
+    <p>Checking max cursor sizes per driver:
+https://drmdb.emersion.fr/capabilities (keyword 2: capabilities)</p>
+  </li>
+  <li>Finding where is the DRM_CAP_CURSOR_HEIGHT value:
+<code class="language-plaintext highlighter-rouge">drivers/gpu/drm/drm_ioctl.c</code>
+(How to define <code class="language-plaintext highlighter-rouge">dev-&gt;mode_config.cursor_height</code> in vkms?)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/*
+ * Get device/driver capabilities
+ */
+static int drm_getcap(struct drm_device *dev, void *data, struct drm_file *file_priv)
+{
+ struct drm_get_cap *req = data;
+ struct drm_crtc *crtc;
+
+ req-&gt;value = 0;
+[..]
+ case DRM_CAP_CURSOR_WIDTH:
+     if (dev-&gt;mode_config.cursor_width)
+         req-&gt;value = dev-&gt;mode_config.cursor_width;
+     else
+         req-&gt;value = 64;
+     break;
+ case DRM_CAP_CURSOR_HEIGHT:
+     if (dev-&gt;mode_config.cursor_height)
+         req-&gt;value = dev-&gt;mode_config.cursor_height;
+     else
+         req-&gt;value = 64;
+     break;
+[..]
+}
+</code></pre></div>    </div>
+  </li>
+  <li>More information: <code class="language-plaintext highlighter-rouge">include/uapi/drm/drm.h</code>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/ *
+ * The CURSOR_WIDTH and CURSOR_HEIGHT capabilities return a valid widthxheight
+ * combination for the hardware cursor. The intention is that a hardware
+ * agnostic userspace can query a cursor plane size to use.
+ *
+ * Note that the cross-driver contract is to merely return a valid size;
+ * drivers are free to attach another meaning on top, eg. i915 returns the
+ * maximum plane size.
+ * /
+#define DRM_CAP_CURSOR_WIDTH 0x8
+#define DRM_CAP_CURSOR_HEIGHT 0x9
+</code></pre></div>    </div>
+  </li>
+  <li>Check the documentation for cursor_width:<br />
+``` 
+<strong>struct drm_mode_config</strong><br />
+Mode configuration control structure</li>
+</ol>
+
+<p><em>cursor_width</em>: hint to userspace for max cursor width<br />
+<em>cursor_height</em>: hint to userspace for max cursor height</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>6. So, where is this `mode_config` defined in vkms?  
+Here: `drivers/gpu/drm/vkms/vkms_drv.c`
+</code></pre></div></div>
+<p>static int vkms_modeset_init(struct vkms_device *vkmsdev)
+{
+	struct drm_device *dev = &amp;vkmsdev-&gt;drm;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>drm_mode_config_init(dev);
+dev-&gt;mode_config.funcs = &amp;vkms_mode_funcs;
+dev-&gt;mode_config.min_width = XRES_MIN;
+dev-&gt;mode_config.min_height = YRES_MIN;
+dev-&gt;mode_config.max_width = XRES_MAX;
+dev-&gt;mode_config.max_height = YRES_MAX;
+dev-&gt;mode_config.preferred_depth = 24;
+dev-&gt;mode_config.helper_private = &amp;vkms_mode_config_helpers;
+
+return vkms_output_init(vkmsdev, 0); } ```  There is nothing about cursor here, so we need to assign maximum values to not take the default.  7. I also found that, on my intel computer, the maximum cursor is 256. Why do tests include 512?  8. Also, there are subtests in kms_cursor_crc for non-square cursors, but these tests are restricted to i915 devices. Why are they here?  9. Finally, I develop a [simple patch][3] that increases the coverage rate by 15 subtests. Considering the current drm-misc-next, my project state is:
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th style="text-align: center">Results</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>pass</strong></td>
+      <td style="text-align: center"><strong>22</strong></td>
+    </tr>
+    <tr>
+      <td>fail</td>
+      <td style="text-align: center">3</td>
+    </tr>
+    <tr>
+      <td>skip</td>
+      <td style="text-align: center">221</td>
+    </tr>
+    <tr>
+      <td>crash</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td>timeout</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td>warn</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td>incomplete</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td>dmesg-warn</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td>dmesg-fail</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td>changes</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td>fixes</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td>regressions</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td>total</td>
+      <td style="text-align: center">246</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="cheer-up">Cheer up!</h4>
+
+<p>It is also possible to consider those in which we have some idea of the problem
+and a provisory solution exists (I mean, an optimistic view):</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th style="text-align: center">Results</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>pass</td>
+      <td style="text-align: center">24</td>
+    </tr>
+    <tr>
+      <td>warn</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td><strong>fail</strong></td>
+      <td style="text-align: center"><strong>0</strong></td>
+    </tr>
+    <tr>
+      <td>skip</td>
+      <td style="text-align: center">221</td>
+    </tr>
+    <tr>
+      <td>crash</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td>timeout</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td>incomplete</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td>dmesg-warn</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td>dmesg-fail</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td>changes</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td>fixes</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td>regressions</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td>total</td>
+      <td style="text-align: center">246</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>There is still the non-square cursors issue, which I’m not sure we should
+handle. Subtests with non-square cursors mean 16 skips.</p>
+
+<h4 id="lessons-learned">Lessons learned</h4>
+
+<ol>
+  <li>
+    <p>For me, IRC conversations are inspiring and also show community pulsing.
+Part of what I question in my master’s research is the lack of interest in
+academic studies in using IRC as a means of understanding the community
+under investigation.<br />
+One of the things I like about IRC is that, unlike other instant messengers
+today, when we are there, we are usually sitting in front of the computer
+(our work tool). I mean, we are not (I think) lying in a hammock on the
+beach, for example. Ok, there could be exceptions. :)<br />
+But to be honest, I hardly talk on a channel; I am usually just watching.</p>
+  </li>
+  <li>
+    <p>There are cases where the complexity lies in understanding what already
+exists instead of in developing new features. I still don’t know if it’s
+frustrating or satisfying.</p>
+  </li>
+  <li>
+    <p>I don’t know if I could understand things without using ctags. The ctags
+was a great tip from Siqueira even in FLUSP times.</p>
+  </li>
+</ol>
+
+
+      </p>
     </div>
     
-<footer class="site-footer">
-    <p class="text">Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
-</p>
-            <div class="footer-icons">
-                <ul>
-                <!-- Social icons from Font Awesome, if enabled -->
-                
-<li>
-	<a href="http://localhost:4000/feed.xml" title="Follow RSS feed">
-		<span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-        </span>
-	</a>
-</li>
+
+    
+
+</section>
 
 
-
-<li>
-	<a href="mailto:melissa.srw@gmail.com" title="Email">
-		<span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-        </span>
-	</a>
-</li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li>
-	<a href="https://github.com/sylhare" title="Follow on GitHub">
-		<span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-        </span>
-	</a>
-</li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                </ul>
-            </div>
+        <footer>
+  &copy; 2020 WEN.ONWEB. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
 </footer>
 
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-170178218-1', 'auto');
+  ga('send', 'pageview');
+</script>
 
 
 
-  </body>
+</body>
 </html>
