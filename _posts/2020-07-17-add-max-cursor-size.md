@@ -84,8 +84,7 @@ information related to my problem "the cursor size":
    (keyword 1: DRM\_CAP\_CURSOR\_HEIGHT)
 2. Checking max cursor sizes per driver: https://drmdb.emersion.fr/capabilities
    (keyword 2: capabilities)
-3. Finding where is the DRM\_CAP\_CURSOR\_HEIGHT value:
-   `drivers/gpu/drm/drm_ioctl.c`\
+3. Finding where is the DRM\_CAP\_CURSOR\_HEIGHT value: `drivers/gpu/drm/drm_ioctl.c` \
    (How to define ` dev->mode_config.cursor_height ` in vkms?)
    ```
    /*
@@ -113,7 +112,7 @@ information related to my problem "the cursor size":
    [..]
    }
    
-   ``` \
+   ```
 4. More information: `include/uapi/drm/drm.h`
 
    ```
