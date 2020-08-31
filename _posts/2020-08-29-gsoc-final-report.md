@@ -13,9 +13,8 @@ agitated. This year,
 [my project](https://summerofcode.withgoogle.com/projects/#4669149428580352)
 was the only one accepted for
 [X.Org Foundation](https://www.x.org/wiki/XorgFoundation/), and I felt a
-great responsibility.
-
-Well, this is the last week of the project, and I'm slowing down and breathing :)
+great responsibility. Well, this is the last week of the project, and I'm
+slowing down and breathing :)
 
 This report is a summary of my journey at Google Summer of Code 2020.
 Experience and technical reports can be read in more detail in the 11 blog
@@ -138,12 +137,12 @@ be a solid black.
 
 **A cross-cutting problem that affected the performance of VKMS for sequential subtests execution**
 
-During the sequential execution of the kms_cursor_crc test cases, the results
+During the sequential execution of the kms\_cursor\_crc test cases, the results
 were unstable. Successful tests failed, two runs of the same test alternated
 between failure and success ... in short, a mess.
 
 In debugging and examining the change history, I found a commit
-that changes the VKMS performance of the kms_cursor_crc test cases. This
+that changes the VKMS performance of the kms\_cursor\_crc test cases. This
 change replaced the drm\_wait\_for\_vblanks function with drm\_wait\_flip\_done
 and, therefore, the VKMS stopped "forcing" vblank interrupts during the process
 of state commit. Without vblank interruptions, the execution of testcases in
@@ -183,7 +182,7 @@ I also sent some contributions to the Kworkflow project.
 | 02 | DRM/Linux kernel | [drm/vkms: add missing drm\_crtc\_vblank\_put to the get/put pair on flush](https://patchwork.freedesktop.org/patch/378382/) | Discarded | - |
 | 03 | DRM/Linux kernel | [drm/vkms: fix xrgb on compute crc](https://patchwork.freedesktop.org/patch/382341/) | Accepted | - |
 | 04 | DRM/Linux kernel | [drm/vkms: guarantee vblank when capturing crc (v3)](https://patchwork.freedesktop.org/patch/384615/) | Accepted | [Link](https://melissawen.github.io/blog/2020/08/13/end_of_endless) |
-| 05 | DRM/Linux kernel | [drm/vkms: add alpha-premultiplied color blending (v2)](https://patchwork.freedesktop.org/patch/387665/) | Under review | [Link](https://melissawen.github.io/blog/2020/08/19/let-vkms-blend-it) |
+| 05 | DRM/Linux kernel | [drm/vkms: add alpha-premultiplied color blending (v2)](https://patchwork.freedesktop.org/patch/387665/) | Accepted | [Link](https://melissawen.github.io/blog/2020/08/19/let-vkms-blend-it) |
 | 06 | IGT GPU Tools | [lib/igt\_fb: remove extra parameters from igt\_put\_cairo\_ctx](https://patchwork.freedesktop.org/series/79162/) | Accepted | [Link](https://melissawen.github.io/blog/2020/07/06/first-round) |
 | 07 | IGT GPU Tools | [[i-g-t,v2,1/2] lib/igt\_fb: change comments with fd description](https://patchwork.freedesktop.org/patch/377581/) | Accepted | [Link](https://melissawen.github.io/blog/2020/07/06/first-round) |
 | 08 | IGT GPU Tools | [[i-g-t,v2,2/2] test/kms\_cursor\_crc: update subtests descriptions and some comments](https://patchwork.freedesktop.org/patch/377582) | Accepted | [Link](https://melissawen.github.io/blog/2020/07/06/first-round) |
@@ -223,11 +222,11 @@ problem. Finally, it seems that somehow, this debate contributed to
 another developer, [Leandro Ribeiro](https://gitlab.freedesktop.org/leandrohrb),
 in his work on another VKMS's issue.
 
-In this debugging process, I also gained more experience and confidence concerning
-the project. So, I reviewed and tested some patches sent to
-VKMS[1, 2, 3, 4]. Finally, with the knowledge acquired, I was also able to
-contribute to the debugging of a feature under development that [adds support
-for writeback][5].
+In this debugging process, I also gained more experience and confidence
+concerning the project. So, I reviewed and tested some patches sent to
+VKMS [[1](https://patchwork.freedesktop.org/patch/374926/),[2](https://patchwork.freedesktop.org/patch/377557/),[3](https://patchwork.freedesktop.org/patch/381344/),[4](https://patchwork.freedesktop.org/patch/387714/)]. Finally, with the knowledge acquired, I was
+also able to contribute to the debugging of a feature under development that
+adds support for writeback [[5]](https://patchwork.freedesktop.org/series/80961/).
 
 ## Discussion and future works
 
@@ -345,8 +344,8 @@ constructive feedback.
 
 #### Additional Links
 
-[1]: https://patchwork.freedesktop.org/patch/374926/
-[2]: https://patchwork.freedesktop.org/patch/377557/
-[3]: https://patchwork.freedesktop.org/patch/381344/
-[4]: https://patchwork.freedesktop.org/patch/387714/
-[5]: https://patchwork.freedesktop.org/series/80961/
+1. https://patchwork.freedesktop.org/patch/374926/
+2. https://patchwork.freedesktop.org/patch/377557/
+3. https://patchwork.freedesktop.org/patch/381344/
+4. https://patchwork.freedesktop.org/patch/387714/
+5. https://patchwork.freedesktop.org/series/80961/
