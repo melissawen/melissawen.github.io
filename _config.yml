@@ -38,6 +38,7 @@ owner:
   job: "Melissa Wen"
   bio: "Software Developer / MsC Student / Brazilian"
   email:
+  rss: true
   disqus-shortname:
   twitter: melissasrw
   facebook: #username
