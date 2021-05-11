@@ -7,7 +7,7 @@ layout: null
     <title>{{ site.title | xml_escape }}</title>
     <description>{{ site.description | xml_escape }}</description>
     <link>{{ site.url }}/</link>
-    <atom:link href="{{ "/feed.xml" | prepend: site.url }}" rel="self" type="application/rss+xml"/>
+    <atom:link href="{{ "/feed_2.xml" | prepend: site.url }}" rel="self" type="application/rss+xml"/>
     <pubDate>{{ site.time | date: "%Y-%m-%d" }}</pubDate>
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
     {% for post in site.categories[linux-kernel-newbie] limit:5 %}
