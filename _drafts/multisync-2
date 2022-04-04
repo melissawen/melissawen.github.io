@@ -1,0 +1,66 @@
+---
+layout: post
+title: "V3D multiple syncobjs support: Linux kernel, Vulkan and Games"
+date: 2022-01-21 07:00:00 -0300
+categories: igalia
+---
+
+What was I doing recently?
+Let's say that I've been walking across the Linux Graphical Stack, from kernel-space to user-space.
+
+But more precisely, we did a compreheensive work at Igalia to enable multiple semaphores in v3dv, the broadcom Vulkan driver running on Raspberry Pi 4.
+This work started in the v3d kernel driver, extending its submission ioctls to enable multiple syncobj. And the feature was completed by reworking the v3dv synchronization mechanisms, since the limitation on v3d kernel driver led to some adaptation on v3dv to handle multiple semaphores request using only one syncobj. Enabling job submissions with multiple in/out syncobj also enabling v3dv to actually pass wait and signal semaphores, as expected.
+In the kernel side, v3d job submission interfaces (CL, CSD and TFU) only supported one in syncobj (wait semaphores in the vulkan driver) and one out syncobj (signal semaphores).
+Well, CL submission accepts two in syncobj: one for binner and another for render job, but it does not mean multiples, right?
+
+But first, what is a syncobj in the Linux/DRM space.
+
+```
+* DRM synchronisation objects (syncobj, see struct &drm_syncobj) provide a
+* container for a synchronization primitive which can be used by userspace
+* to explicitly synchronize GPU commands, can be shared between userspace
+* processes, and can be shared between different DRM drivers.
+* Their primary use-case is to implement Vulkan fences and semaphores.   
+```
+
+-----<
+And this last sentence reminded me of a short conversation:
+
+- "Why do we have to do this?"
+- "Because Vulkan wants"
+
+Well, after looking the DRM syncobj documentation, we see the answer sounds fair...
+------>
+
+So, to enable multiple syncobjs, 
+
+
+we decided to extend v3d ioctls (v3d_cl_submit_ioctl, v3d_csd_submit_ioctl, v3d_tfu_submit_ioctl).
+When I was checking around how other developers handled this issue in the past, I found an interesting commit message:
+
+```
+Author: Chris Wilson <chris@chris-wilson.co.uk>
+Date:   Fri Mar 22 09:23:22 2019 +0000
+
+    drm/i915: Introduce the i915_user_extension_method
+    
+    An idea for extending uABI inspired by Vulkan's extension chains.
+    Instead of expanding the data struct for each ioctl every time we need
+    to add a new feature, define an extension chain instead. As we add
+    optional interfaces to control the ioctl, we define a new extension
+    struct that can be linked into the ioctl data only when required by the
+    user. The key advantage being able to ignore large control structs for
+    optional interfaces/extensions, while being able to process them in a
+    consistent manner.
+    
+    In comparison to other extensible ioctls, the key difference is the
+    use of a linked chain of extension structs vs an array of tagged
+    pointers. For example,
+    
+    struct drm_amdgpu_cs_chunk {
+[...]
+```
+
+And inspired by i915 user_extension and amdgpu cs_chunk, I opted to extend v3d interface through a generic interface.
+
+

@@ -1,0 +1,57 @@
+---
+layout: post
+title: "V3D multiple syncobjs support: Linux kernel, Vulkan and Games"
+date: 2022-01-21 07:00:00 -0300
+categories: igalia
+---
+
+In Brazil, we usually say a new year starts after the Carnival. As I'm Brazilian, I'll take this chance to say Happy new year now and apologize to not blog anything in the last 2021.
+Blogging often will be my new year promise!
+
+2021 was an intensive year, with many personal changes.
+- I finished my CS MSc at University of São Paulo, remotely and during a pandemic.
+- I started as a Graphics developer at Igalia.
+- In the end of the year, I moved to Praia, Cape Verde. 
+
+On the other hand, I'm proud of what I conquer in 2021. I've learned a lot from
+what I've researched in the Linux kernel project. I examined hundreds of
+informal publication written by the Linux developers about the Linux kernel
+development community. Compared results with those published in academic
+venues, doing a multivocal literature review and, finally, I discussed the
+results from my view as a participant in the DRM community. Eu amadureci bastante em relação ao software livre, a comunidade e a história de desenvolvimento do kernel do Linux.
+
+Without a pause, I got my dream job at Igalia. Besides working remotely in the Linux graphics stack with a strong consultancy in the OSS world, I share so many values with Igalia.
+
+---
+
+Last months, we did a compreheensive work at Igalia to enable multiple semaphores in v3dv, the broadcom Vulkan driver running on Raspberry Pi 4.
+This work started by enabling multiple syncobj in the v3d kernel driver and was completed by reworking the v3dv synchronization design.
+The limitation on v3d kernel driver led to some adaptation on v3dv to handle multiple semaphores in one syncobj. Enabling job submissions with multiple in/out syncobj also enabling v3dv to actually pass wait and signal semaphores, as expected.
+In the kernel side, v3d job submission interfaces (CL, CSD and TFU) only supported one in syncobj (wait semaphores in the vulkan driver) and one out syncobj (signal semaphores).
+Well, CL submission accepts two in syncobj: one for binner and another for render job, but it does not mean multiples, right?
+So, the first step was to extend v3d ioctls (v3d_cl_submit_ioctl, v3d_csd_submit_ioctl, v3d_tfu_submit_ioctl).
+Inspired by amd and intel solutions to deal with this issue, I opted to extend v3d interface through a generic interface
+
+Then
+
+Enabling multiple in/out syncobjs on v3d kernel driver.
+* Before: only one in/out syncobj support per job
+* But why we need to do it?
+* Creating a generic extension
+* Extending v3d interface
+
+Use multisync capabilities in v3dv Vulkan driver.
+* Before: almost serialized
+- List of FIXME
+* Guarantees: submit in-order, but not completion in-order
+* Cleanup
+* Extending the interface and improving semaphores handling
+- Last job by queue
+- Wait semaphores
+- Signal semaphores
+- Fence
+
+Checking with games
+* gfxr_reconstruct
+* scenarios
+* results

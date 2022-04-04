@@ -7,7 +7,7 @@ title: Wen.onweb
 email:
 description: Sofware and Development
 url: # the base hostname & protocol for your site
-keywords: ["blog", "jekyll"]
+keywords: ["blog", "Linux kernel", "GPU drivers"]
 
 #
 ###################################
@@ -36,7 +36,7 @@ owner:
   name: WEN.ONWEB
   avatar: melissa-wen.jpg
   job: "Melissa Wen"
-  bio: "Software Developer / MsC Student / Brazilian"
+  bio: "Software Developer @ Igalia / Brazilian"
   email:
   rss: true
   disqus-shortname:

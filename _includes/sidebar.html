@@ -14,11 +14,11 @@
       <li class="nav-item">
         <a href="{{ site.url }}/">home</a>
       </li>
-      {% for page in site.pages %} {% if page.title %}
+      {% for page in site.pages %} {% if page.title %}{% unless page.title contains 'Draft' %}
       <li class="nav-item">
         <a href="{{ site.url }}{{ page.url }}">{{ page.title }}</a>
       </li>
-      {% endif %} {% endfor %}
+      {% endunless %}{% endif %} {% endfor %}
     </ul>
   </nav>
   {% include social-links.html %}
