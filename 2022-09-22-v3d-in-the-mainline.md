@@ -22,9 +22,9 @@ and install upstream kernel versions (>=6.0) in this short blog post.
 
 > Note: V3D driver is not present in Raspberry Pi models 0-3.
 
-First, I'm taking into account you already know how to cross-compile a custom
-kernel to your system. If it is not your case, a good tutorial is already
-available in the [Raspberry Pi
+First, I'm taking into account that you already know how to cross-compile a
+custom kernel to your system. If it is not your case, a good tutorial is
+already available in the [Raspberry Pi
 documentation](https://www.raspberrypi.com/documentation/computers/linux_kernel.html#cross-compiling-the-kernel),
 but it targets the kernel in the rpi-linux repository (downstream kernel).
 
@@ -36,9 +36,9 @@ presented below:
 ### Diff short summary:
 
 1. instead of getting the .config file from `bcm2711_defconfig`, get it by running `make ARCH=arm64 defconfig`
-2. compile and install the kernel image and modules as usual, but just copy the dtb file `arch/arm64/boot/dts/broadcom/bcm2711-rpi-4-b.dtb` to the `/boot` of your target machine (no overlays)
+2. compile and install the kernel image and modules as usual, but just copy the dtb file `arch/arm64/boot/dts/broadcom/bcm2711-rpi-4-b.dtb` to the `/boot` of your target machine (no `/overlays` directory to copy)
 3. change `/boot/config.txt`:
-   * comment the `dt_overlay=` entry
+   * comment/remove the `dt_overlay=vc4-kms-v3d` entry
    * add a `device_tree=bcm2711-rpi-4-b.dtb` entry
 
 ## Raspberry Pi 4 32-bits (arm)
@@ -47,9 +47,9 @@ presented below:
 
 1. get the .config file by running `make ARCH=arm multi_v7_defconfig`
 2. using `make ARCH=arm menuconfig` or a similar tool, enable `CONFIG_ARM_LPAE=y`
-3. compile and install the kernel image and modules as usual, but just copy the dtb file `arch/arm/boot/dts/bcm2711-rpi-4-b.dtb` to the `/boot` of your target machine (no overlays)
+3. compile and install the kernel image and modules as usual, but just copy the dtb file `arch/arm/boot/dts/bcm2711-rpi-4-b.dtb` to the `/boot` of your target machine (no `/overlays` directory to copy)
 4. change `/boot/config.txt`:
-   * comment the `dt_overlay=` entry
+   * comment/remove the `dt_overlay=vc4-kms-v3d` entry
    * add a `device_tree=bcm2711-rpi-4-b.dtb` entry
 
 ## Step-by-step for remote deployment:
@@ -118,20 +118,20 @@ rm -rf $TMP
 
 ### Set config.txt of you RPi 4
 In your Raspberry Pi 4, open the config file `/boot/config.txt`
-* comment/remove the `dt_overlay=` line
+* comment/remove the `dt_overlay=vc4-kms-v3d` entry
 * add a `device_tree=bcm2711-rpi-4-b.dtb` entry
-* add a kernel=<image-name> entry
+* add a `kernel=<image-name>` entry
 
 ## Why not Kworkflow?
 
 You can safely use the steps above, but if you are hacking the kernel and need
-to repeat this compiling and installing steps repeately, why don't try the
+to repeat this compiling and installing steps repeatedly, why don't try the
 Kworkflow?
 
 [Kworkflow](https://github.com/kworkflow/kworkflow) is a set of scripts to
-synthesizes all steps to have a custom kernel compiled and install in local and
-remote machines and it supports kernel building and deployment to Raspberry Pi
-machines for Raspbian 32 bit and 64 bit.
+synthesize all steps to have a custom kernel compiled and installed in local
+and remote machines and it supports kernel building and deployment to Raspberry
+Pi machines for Raspbian 32 bit and 64 bit.
 
 After learning the kernel compilation and installation step by step, you can
 simply use `kw bd` command and have a custom kernel installed in your Raspberry
