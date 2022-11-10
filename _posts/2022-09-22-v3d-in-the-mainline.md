@@ -1,10 +1,10 @@
 ---
-layout: page
-title: "Draft - V3D enablement in mainline kernel"
-date: 2022-09-22 08:00:00 -0100
-draft: draft
-permalink: /draft-v3d-enablement
+layout: post
+title: "V3D enablement in mailine kernel"
+date: 2022-11-10 11:40:00 -0300
+categories: igalia
 ---
+
 
 Hey,
 
