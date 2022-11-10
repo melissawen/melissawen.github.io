@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "V3D enablement in mailine kernel"
+title: "V3D enablement in mainline kernel"
 date: 2022-11-10 11:40:00 -0300
 categories: igalia
 ---
