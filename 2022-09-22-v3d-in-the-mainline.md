@@ -11,9 +11,12 @@ Hey,
 If you enjoy using upstream Linux kernel in your Raspberry Pi system or just
 want to give a try in the freshest kernel graphics drivers there, the good news
 is that now you can compile and boot the V3D driver from the mainline in your
-Raspberry Pi 4. Thanks to the work of Stefan, Peter and Nicolas[1][2], the V3D
-enablement reached the Linux kernel mainline. That means hacking and using new
-features available in the upstream V3D driver directly from the source.
+Raspberry Pi 4. Thanks to the work of Stefan, Peter and Nicolas
+[[1]](https://lore.kernel.org/all/20220601125344.60602-1-stefan.wahren@i2se.com/)
+[[2]](https://lore.kernel.org/all/20220603092610.1909675-1-pbrobinson@gmail.com/),
+the V3D enablement reached the Linux kernel mainline. That means hacking and
+using new features available in the upstream V3D driver directly from the
+source.
 
 However, even for those used to compiling and installing a custom kernel in the
 Raspberry Pi, there are some quirks to getting the mainline v3d module
@@ -141,6 +144,3 @@ Pi 4.
 > but the driver is not loaded yet for arm. Besides that, a bunch of pte invalid
 > errors may appear when using 3D acceleration, it's a known issue that are still
 > under investigation.
-
-[1] https://lore.kernel.org/all/20220601125344.60602-1-stefan.wahren@i2se.com/
-[2] https://lore.kernel.org/all/20220603092610.1909675-1-pbrobinson@gmail.com/
