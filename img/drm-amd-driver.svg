@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="130mm"
+   height="100mm"
+   viewBox="0 0 130 100"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="drm-amd-driver.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.84096521"
+     inkscape:cx="427.48499"
+     inkscape:cy="543.4232"
+     inkscape:window-width="2552"
+     inkscape:window-height="1363"
+     inkscape:window-x="26"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#f4d7d7;stroke:#000000;stroke-width:0.229;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect1877"
+       width="74.251221"
+       height="16.630545"
+       x="36.508057"
+       y="22.776665" />
+    <rect
+       style="fill:#e9afaf;stroke:#000000;stroke-width:0.229;stroke-dasharray:none"
+       id="rect1987"
+       width="74.251221"
+       height="16.630545"
+       x="36.508057"
+       y="45.530849" />
+    <rect
+       style="fill:#d35f5f;stroke:#000000;stroke-width:0.229;stroke-dasharray:none"
+       id="rect1989"
+       width="74.251221"
+       height="16.630545"
+       x="36.508057"
+       y="68.285042" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="73.543739"
+       y="32.46653"
+       id="text2045"><tspan
+         sodipodi:role="line"
+         id="tspan2043"
+         style="font-size:4.23333px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="73.543739"
+         y="32.46653">DRM/KMS</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="73.799034"
+       y="55.014011"
+       id="text2049"><tspan
+         sodipodi:role="line"
+         id="tspan2047"
+         style="font-size:4.23333px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="73.799034"
+         y="55.014011">AMD Display Manager (DM)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="73.799034"
+       y="77.768204"
+       id="text2053"><tspan
+         sodipodi:role="line"
+         id="tspan2051"
+         style="font-size:4.23333px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="73.799034"
+         y="77.768204">AMD Display Core (DC)</tspan></text>
+    <path
+       d="m -335.84349,-32.91572 c -0.31467,-0.73586 -0.64655,-1.46394 -0.95589,-2.20264 1.3632,0.81596 2.72212,1.63652 4.08098,2.45883 -1.39865,0.76667 -2.79559,1.53745 -4.19537,2.30232 0.35302,-0.74215 0.7188,-1.47753 1.07355,-2.21845 0,0 0,0 -0.003,-0.34007 z"
+       id="path6097"
+       sodipodi:nodetypes="cccccc"
+       style="stroke-width:0.059;stroke-dasharray:none"
+       inkscape:transform-center-x="123.71786"
+       inkscape:transform-center-y="-354.95227" />
+    <g
+       id="g6141"
+       transform="translate(-31.963514,-22.817226)">
+      <path
+         d="m 103.23673,64.238383 c 0.72837,-0.33163 1.44857,-0.6803 2.17991,-1.00666 -0.78417,1.38173 -1.57304,2.75929 -2.36365,4.13684 -0.79886,-1.38052 -1.60179,-2.75923 -2.39888,-4.14092 0.75013,0.33573 1.49379,0.68438 2.24272,1.02188 0,0 0,0 0.3399,-0.0114 z"
+         id="path6095"
+         sodipodi:nodetypes="cccccc"
+         style="stroke-width:0.0586949"
+         inkscape:transform-center-x="-351.94422"
+         inkscape:transform-center-y="-131.8776" />
+      <path
+         d="m 108.36035,66.241092 c 0.72837,0.33163 1.44856,0.6803 2.1799,1.00666 -0.78417,-1.38173 -1.57303,-2.75929 -2.36363,-4.13684 -0.79886,1.38052 -1.60179,2.75923 -2.39887,4.14091 0.75012,-0.33573 1.49378,-0.68437 2.24271,-1.02187 0,0 0,0 0.33989,0.0114 z"
+         id="path371636-7-67-3"
+         sodipodi:nodetypes="cccccc"
+         style="stroke-width:0.0586949"
+         inkscape:transform-center-x="-351.94422"
+         inkscape:transform-center-y="131.8776" />
+    </g>
+    <g
+       id="g6147"
+       transform="translate(-31.963514,-0.06305059)">
+      <path
+         d="m 103.23673,64.238383 c 0.72837,-0.33163 1.44857,-0.6803 2.17991,-1.00666 -0.78417,1.38173 -1.57304,2.75929 -2.36365,4.13684 -0.79886,-1.38052 -1.60179,-2.75923 -2.39888,-4.14092 0.75013,0.33573 1.49379,0.68438 2.24272,1.02188 0,0 0,0 0.3399,-0.0114 z"
+         id="path6143"
+         sodipodi:nodetypes="cccccc"
+         style="stroke-width:0.0586949"
+         inkscape:transform-center-x="-351.94422"
+         inkscape:transform-center-y="-131.8776" />
+      <path
+         d="m 108.36035,66.241092 c 0.72837,0.33163 1.44856,0.6803 2.1799,1.00666 -0.78417,-1.38173 -1.57303,-2.75929 -2.36363,-4.13684 -0.79886,1.38052 -1.60179,2.75923 -2.39887,4.14091 0.75012,-0.33573 1.49378,-0.68437 2.24271,-1.02187 0,0 0,0 0.33989,0.0114 z"
+         id="path6145"
+         sodipodi:nodetypes="cccccc"
+         style="stroke-width:0.0586949"
+         inkscape:transform-center-x="-351.94422"
+         inkscape:transform-center-y="131.8776" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.43531;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:1.30594, 1.30594;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 6.2303471,12.10115 119.27551,12.525133"
+       id="path6203" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.52778px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="10.715803"
+       y="17.742432"
+       id="text6207"><tspan
+         sodipodi:role="line"
+         id="tspan6205"
+         style="font-size:3.52778px;stroke-width:0.264583"
+         x="10.715803"
+         y="17.742432">kernel space</tspan></text>
+  </g>
+</svg>
