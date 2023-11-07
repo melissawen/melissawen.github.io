@@ -10,16 +10,16 @@ categories: igalia
 Color is a visual perception. Human eyes can detect a broader range of colors
 than any devices in the graphics chain. Since each device can generate, capture
 or reproduce a specific subset of colors and tones, color management controls
-color conversion and calibration across devices to ensure a more accurate and
-consistent color representation. We can expose a GPU-accelerated display color
-management pipeline to support this process and enhance results, and this is
-what we are doing on Linux to improve color management on
-`Gamescope/SteamDeck`. Even with the challenges of being external developers,
-we have been working on mapping `AMD GPU color capabilities` to `the Linux
-kernel color management interface`, which is a combination of DRM and AMD
-driver-specific color properties. This more extensive color management pipeline
-includes `pre-defined Transfer Functions`, `1-Dimensional LookUp Tables (1D
-LUTs)`, and `3D LUTs` before and after the plane composition/blending.
+color conversion and calibration across devices to ensure a more consistent
+color reproduction. We can expose a GPU-accelerated display color management
+pipeline to support this process and enhance results, and this is what we are
+doing on Linux to improve color management on `Gamescope/SteamDeck`. Even with
+the challenges of being external developers, we have been working on mapping
+`AMD GPU color capabilities` to `the Linux kernel color management interface`,
+which is a combination of DRM and AMD driver-specific color properties. This
+more extensive color management pipeline includes `pre-defined Transfer
+Functions`, `1-Dimensional LookUp Tables (1D LUTs)`, and `3D LUTs` before and
+after the plane composition/blending.
 
 ---
 
@@ -124,7 +124,7 @@ only one output per CRTC. Color conversions after blending would be enough in a
 single-plane scenario or when dealing with planes in the same color space on
 the kernel side. Still, it cannot help to handle the blending of multiple
 planes with different color spaces and luminance levels. With plane color
-management properties, userspace can get a more accurate representation of
+management properties, userspace can get better representation of
 colors to deal with the diversity of color profiles of devices in the graphics
 chain, bring a `wide color gamut (WCG)`, convert `High-Dynamic-Range (HDR)`
 content to `Standard-Dynamic-Range (SDR)` content (and vice-versa). With a
