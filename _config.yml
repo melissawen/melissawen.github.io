@@ -7,7 +7,7 @@ title: Wen.onweb
 email:
 description: Sofware and Development
 url: # the base hostname & protocol for your site
-keywords: ["blog", "Linux kernel", "GPU drivers"]
+keywords: ["blog", "Linux kernel", "GPU drivers", "AMD", "display driver", "Linux", "Graphics"]
 
 #
 ###################################
@@ -36,7 +36,7 @@ owner:
   name: WEN.ONWEB
   avatar: melissa-wen.jpg
   job: "Melissa Wen"
-  bio: "Software Developer @ Igalia / Brazilian"
+  bio: "Software Developer @ Igalia"
   email:
   rss: true
   disqus-shortname:
@@ -50,7 +50,7 @@ owner:
     ad-slot:
   bing-verify:
   github: melissawen
-  gitlab: melissawen
+  gitlab: mwen
   stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
   linkedin: melissa-wen-1b4bb539
   skype: #username
