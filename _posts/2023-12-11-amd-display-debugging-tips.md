@@ -64,8 +64,8 @@ relevant code for your specific hardware is crucial.
 - Find GPU product information [in Linux/AMD GPU documentation](https://dri.freedesktop.org/docs/drm/gpu/amdgpu/driver-misc.html#gpu-product-information)
 - Check the dmesg log for the Display Core version (since [this commit](https://github.com/torvalds/linux/commit/bf7fda0b3736f93ac8b18e7147e1e7acd27e6a19)
 in Linux kernel 6.3v). For example:
-  - "`[drm] Display Core v3.2.241 initialized on DCN 2.1`"
-  - "`[drm] Display Core v3.2.237 initialized on DCN 3.0.1`"
+  - `[drm] Display Core v3.2.241 initialized on DCN 2.1`
+  - `[drm] Display Core v3.2.237 initialized on DCN 3.0.1`
 
 ## Investigating the relevant driver code:
 
@@ -183,8 +183,8 @@ community feedback and validation:
 	}
 ```
 
-Keep in mind that the documentation of color capabilities are available at:
-https://dri.freedesktop.org/docs/drm/gpu/amdgpu/display/display-manager.html#dc-color-capabilities-between-dcn-generations
+Keep in mind that the documentation of color capabilities are available at
+[the Linux kernel Documentation](https://docs.kernel.org/gpu/amdgpu/display/display-manager.html#dc-color-capabilities-between-dcn-generations).
 
 ## Understanding the development history:
 
