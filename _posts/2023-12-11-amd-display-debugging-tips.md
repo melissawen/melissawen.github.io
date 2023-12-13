@@ -1,15 +1,15 @@
 ---
-layout: page
-title: "Draft - 15 Tips for Debugging Issues in the AMD Display Kernel Driver"
-date: 2023-12-11 11:25:00 -0100
-draft: draft
-permalink: /draft-amd-display-debugging-tips
+layout: post
+title: "15 Tips for Debugging Issues in the AMD Display Kernel Driver"
+date: 2023-12-13 11:25:00 -0100
+categories: igalia 
 ---
 
-This blog post provides insights and guidance for examining and debugging the
-AMD display driver within the Linux kernel/DRM subsystem. It's based on my
-experience as an external developer working on the driver, and are shared with
-the goal of helping others navigate the process.
+_A self-help guide for examining and debugging the AMD display driver within the
+Linux kernel/DRM subsystem._
+
+It's based on my experience as an external developer working on the driver, and
+are shared with the goal of helping others navigate the driver code.
 
 **Acknowledgments:** These tips were gathered thanks to the countless help
 received from AMD developers during the driver development process. The list
@@ -19,7 +19,7 @@ help of my former GSoC mentor, [Rodrigo Siqueira](https://siqueira.tech/).
 
 ## Pre-Debugging Steps:
 
-Before diving into debugging, it's crucial to perform two essential steps:
+Before diving into an issue, it's crucial to perform two essential steps:
 
 **1) Check the latest changes:** Ensure you're working with the latest AMD
 driver modifications located in the
@@ -27,11 +27,13 @@ driver modifications located in the
 maintained by Alex Deucher. You may also find bug fixes for newer kernel
 versions on branches that have the name pattern `drm-fixes-<date>`.
 
-**2) Examine the issue tracker:** Before diving into debugging, confirm that
-your issue isn't already documented and addressed in the AMD display driver
-issue tracker.
+**2) Examine the issue tracker:** Confirm that your issue isn't already
+documented and addressed in the AMD display driver issue tracker. If you find a
+similar issue, you can team up with others and speed up the debugging process.
 
 ## Understanding the issue:
+
+Do you really need to change this? Where should you start looking for changes?
 
 **3) Is the issue in the AMD kernel driver or in the userspace?:** Identifying
 the source of the issue is essential regardless of the GPU vendor.  Sometimes
@@ -66,6 +68,8 @@ in Linux kernel 6.3v). For example:
   - "`[drm] Display Core v3.2.237 initialized on DCN 3.0.1`"
 
 ## Investigating the relevant driver code:
+
+Keep from letting unrelated driver code to affect your investigation.
 
 **6) Narrow the code inspection down to one DC HW family:** the relevant code
 resides in a directory named after the DC number. For example, the DCN 3.0.1
@@ -184,6 +188,8 @@ https://dri.freedesktop.org/docs/drm/gpu/amdgpu/display/display-manager.html#dc-
 
 ## Understanding the development history:
 
+What has brought us to the current state?
+
 **9) Pinpoint relevant commits:** Use `git log` and `git blame` to identify commits
 targeting the code section you're interested in.
 
@@ -198,11 +204,13 @@ testing log of each release in the report provided on the `amd-gfx` mailing
 list, such as this one `Tested-by: Daniel Wheeler`:
 - [RE: [PATCH 00/13] DC Patches for Dec 11, 2023](https://lore.kernel.org/amd-gfx/DS0PR12MB65344F38E185B7DD4E32A4F29C8FA@DS0PR12MB6534.namprd12.prod.outlook.com/)
 
-## Reducing the inspection area
+## Reducing the inspection area:
+
+Focus on what really matters.
 
 **11) Identify involved HW blocks:** This helps isolate the issue. You can find
-more information about DCN HW blocks in the [DCN Overview
-documentation](https://dri.freedesktop.org/docs/drm/gpu/amdgpu/display/dcn-overview.html).
+more information about DCN HW blocks in the
+[DCN Overview documentation](https://dri.freedesktop.org/docs/drm/gpu/amdgpu/display/dcn-overview.html).
 In summary:
 - Plane issues are closer to HUBP and DPP.
 - Blending/Stream issues are closer to MPC, OPP and OPTC. They are related
@@ -243,6 +251,9 @@ two steps:
 - [Enabling pipe split on DCN301](https://patchwork.freedesktop.org/patch/526108/?series=114927&rev=1)
 
 ## Checking implicit programming and hardware limitations:
+
+Bring implicit programming to the level of consciousness and recognize hardware
+limitations.
 
 **13) Implicit update types:** Check if the selected type for atomic update may
 affect your issue. The update type depends on the mode settings, since
@@ -292,6 +303,8 @@ UPDATE_TYPE_FULL, /* may need to shuffle resources */
 
 ## Using tools:
 
+Observe the current state, validate your findings, continue improvements.
+
 **14) Use AMD tools to check hardware state and driver programming:** help on
 understanding your driver settings and checking the behavior when changing
 those settings.
@@ -329,6 +342,10 @@ element of the DRM/KMS workflow. Output can be helpful when reporting bugs.
 
 ## Don't give up!
 
+Debugging issues in the AMD display driver can be challenging, but by following
+these tips and leveraging available resources, you can significantly improve
+your chances of success. 
+
 **Worth mentioning:** This blog post builds upon my talk,
 ["I'm not an AMD expert, but..."](https://www.youtube.com/watch?v=CMm-yhsMB7U)
 presented at the 2022 XDC. It shares guidelines that helped me debug AMD
@@ -343,8 +360,5 @@ valuable resource for finding similar bugs, troubleshooting tips, and
 suggestions from AMD developers. Finally, it's a platform for seeking help when
 needed.
 
-Debugging issues in the AMD display driver can be challenging, but by following
-these tips and leveraging available resources, you can significantly improve
-your chances of success. Remember, contributing to the open source community
-through issue resolution and collaboration is mutually beneficial for everyone
-involved.
+Remember, contributing to the open source community through issue resolution
+and collaboration is mutually beneficial for everyone involved.
