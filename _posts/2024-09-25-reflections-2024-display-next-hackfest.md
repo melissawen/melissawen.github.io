@@ -1,9 +1,8 @@
 ---
-layout: page
-title: "Draft - Reflections on 2024 Linux Display Next Hackfest"
+layout: post
+title: "Reflections on 2024 Linux Display Next Hackfest"
 date: 2024-09-25 09:50:00 -0300
-draft: draft
-permalink: /draft-reflections-2024-display-next-hackfest
+categories: igalia
 ---
 
 Hey everyone! 
