@@ -1,9 +1,9 @@
 ---
-layout: page
-title: "Draft - Reflections on 2024 Linux Display Next Hackfest"
-date: 2024-09-25 09:50:00 -0300
-draft: draft
-permalink: /draft-reflections-2024-display-next-hackfest
+layout: post
+title: "Reflections on 2024 Linux Display Next Hackfest"
+date: 2024-09-25 10:50:00 -0300
+permalink: /blog/2024/09/25/reflections-2024-display-next-hackfest
+categories: igalia
 ---
 
 Hey everyone! 
@@ -13,7 +13,7 @@ hackfest](https://events.pages.igalia.com/linuxdisplaynexthackfest/) concluded
 in May, and its outcomes continue to shape the Linux Display stack. Igalia
 hosted this year's event in A Coruña, Spain, bringing together leading experts
 in the field. [Samuel Iglesias](https://blogs.igalia.com/siglesias/) and I
-organized this year's edition and this blog post summarize the experience and
+organized this year's edition and this blog post summarizes the experience and
 its fruits.
 
 [![](https://raw.githubusercontent.com/melissawen/melissawen.github.io/refs/heads/master/img/2024-ldnh/hackfest-room-0.jpg)](https://raw.githubusercontent.com/melissawen/melissawen.github.io/refs/heads/master/img/2024-ldnh/hackfest-room-0.jpg "Hackfest main room: preparation before starting the first day with organizers and some participants in the main room checking schedule and chatting.")
