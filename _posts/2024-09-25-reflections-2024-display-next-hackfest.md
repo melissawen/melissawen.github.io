@@ -267,8 +267,8 @@ meet you and chat face-to-face.
 Finally, thanks virtual participants who couldn't make it in person but
 organized their days to actively participate in each discussion, adding
 different perspectives and valuable inputs even remotely: Abhinav Kumar
-(Qualcomm),  Chaitanya Borah (Intel), Christopher Braga (Qualcomm), Dor Askayo
-(Red Hat), Jiri Koten (RedHat), Jonas Ådahl (Red Hat), Leandro Ribeiro
+(Qualcomm),  Chaitanya Borah (Intel), Christopher Braga (Qualcomm), Dor Askayo,
+Jiri Koten (RedHat), Jonas Ådahl (Red Hat), Leandro Ribeiro
 (Collabora), Marti Maria (Little CMS), Marijn Suijten, Mario Kleiner, Martin
 Stransky (Red Hat), Michel Dänzer (Red Hat), Miguel Casas-Sanchez (Google),
 Mitulkumar Golani (Intel), Naveen Kumar (Intel), Niels De Graef (Red Hat),
