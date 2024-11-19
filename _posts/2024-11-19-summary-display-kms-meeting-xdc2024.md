@@ -1,9 +1,8 @@
 ---
-layout: page
-title: "Draft - Display/KMS Meeting at XDC 2024: Detailed Report"
-date: 2024-11-19 09:50:00 -0300
-draft: draft
-permalink: /summary-display-kms-meeting-xdc-2024
+layout: post
+title: "Display/KMS Meeting at XDC 2024: Detailed Report"
+date: 2024-11-19 10:00:00 -0300
+categories: igalia
 ---
 
 XDC 2024 in Montreal was another fantastic gathering for the Linux Graphics
@@ -11,12 +10,10 @@ community. It was again a great time to immerse in the world of graphics
 development, engage in stimulating conversations, and learn from inspiring
 developers.
 
-My [Igalia](https://igalia.com/) colleagues and I participated in the
+Many [Igalia](https://igalia.com/) colleagues and I participated in the
 conference again, delivering multiple talks about our work on the Linux
-Graphics stack and also organizing the Display/KMS meeting.
-
-This blog post is a detailed report on the Display/KMS meeting held during this XDC
-edition.
+Graphics stack and also organizing the Display/KMS meeting. This blog post is a
+detailed report on the Display/KMS meeting held during this XDC edition.
 
 **Short on Time?**
 
@@ -30,7 +27,7 @@ edition.
 ## TL;DR
 
 This meeting took 3 hours and tackled a variety of topics related to DRM/KMS
-(Linux DRM Kernel Modesetting):
+(Linux/DRM Kernel Modesetting):
 - **Sharing Drivers Between V4L2 and KMS:** Brainstorming solutions for using a
   single driver for devices used in both camera capture and display pipelines.
 - **Real-Time Scheduling:** Addressing issues with non-blocking page flips
