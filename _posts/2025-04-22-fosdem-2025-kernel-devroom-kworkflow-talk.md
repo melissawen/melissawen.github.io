@@ -1,15 +1,14 @@
 ---
-layout: page
-title: "Draft - 2025 FOSDEM: Don't let your motivation go, save time with kworkflow"
-date: 2025-04-22 15:50:00 -0300
-draft: draft
-permalink: /draft-2025-fosdem-kworkflow
+layout: post
+title: "2025 FOSDEM: Don't let your motivation go, save time with kworkflow"
+date: 2025-04-22 16:30:00 -0300
+categories: igalia 
 ---
 
 2025 was my first year at FOSDEM, and I can say it was an incredible experience
 where I met many colleagues from [Igalia](https://igalia.com) who live around
-the world and also many friends from the Linux display stack who are part of my
-daily work and contributions to DRM/KMS. In addition, I met many new faces and
+the world, and also many friends from the Linux display stack who are part of
+my daily work and contributions to DRM/KMS. In addition, I met new faces and
 recognized others with whom I had interacted on some online forums and we had
 good and long conversations.
 
@@ -39,10 +38,11 @@ bugs, and sharing scripts to increase feature coverage.
 So, the video and slide deck of my FOSDEM presentation are available for
 download
 [here](https://fosdem.org/2025/schedule/event/fosdem-2025-5733-don-t-let-your-motivation-go-save-time-with-kworkflow/).
-And, as usual, you will find in this blog post the script of this presentation
-and more detailed explanation of the demo presented there.
 
 <iframe width="672" height="378" src="https://video.fosdem.org/2025/ud2208/fosdem-2025-5733-don-t-let-your-motivation-go-save-time-with-kworkflow.av1.webm" title="YouTube video - Kworkflow Talk at FOSDEM 2025" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+And, as usual, you will find in this blog post the script of this presentation
+and more detailed explanation of the demo presented there.
 
 ---
 
@@ -269,7 +269,7 @@ can find everything you need to wrap your changes in patch format and submit
 them to the right list of recipients, those who can review, comment on, and
 accept your changes.
 
-![](https://notes.igalia.com/uploads/b31579a7-355a-4042-8efd-7ba174e5a46c.gif)
+![](https://raw.githubusercontent.com/melissawen/melissawen.github.io/refs/heads/master/img/fosdem-2025-talk/kworkflow-patch-hub.gif)
 
 This is a demo that the lead developer of the kw patch-hub feature sent me.
 With this feature, you will be able to check out a series on a specific mailing
@@ -302,12 +302,13 @@ other settings specific for those three devices that I have.
   - kw debug
   - kw drm
 
-![](https://notes.igalia.com/uploads/e1c0b2e0-7ba5-41a6-a975-417ddba3c287.gif)
+![](https://raw.githubusercontent.com/melissawen/melissawen.github.io/refs/heads/master/img/fosdem-2025-talk/kworkflow-env.gif)
 
 #### Demo script
 
-- In the same terminal and worktree.
-- First target device: Laptop (debian|x86|intel|local)
+In the same terminal and worktree.
+
+##### First target device: Laptop (debian|x86|intel|local)
 ```
 $ kw env --list # list environments available in this work tree
 $ kw env --use LOCAL # select the environment of local machine (laptop) to use: loading pre-compiled files, kernel and kworkflow settings.
@@ -318,7 +319,8 @@ $ kw bd # compile and install kernel with the given change
 $ sudo modinfo vkms # show VKMS module information after kernel changes.
 $ git checkout -- drivers
 ```
-- Second target device: RaspberryPi 4 (raspbian|arm64|broadcomm|remote)
+
+##### Second target device: RaspberryPi 4 (raspbian|arm64|broadcomm|remote)
 ```
 $ kw env --use RPI_64 # move to the environment for a different target device.
 $ kw device # show device information and kernel image name
@@ -328,7 +330,8 @@ $ kw d --reboot # deploy the custom kernel in a Raspberry Pi 4 with Raspbian 64,
 $ kw s # connect with the target machine via ssh and check the kernel image name
 $ exit
 ```
-- Third target device: SteamDeck (steamos|x86|amd|remote)
+
+##### Third target device: SteamDeck (steamos|x86|amd|remote)
 ```
 $ kw env --use STEAMDECK # move to the environment for a different target device
 $ kw device # show device information
