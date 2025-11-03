@@ -1,9 +1,8 @@
 ---
-layout: page
+layout: post
 title: "Kworkflow at Kernel Recipes 2025"
-date: 2025-11-03 16:20:00 -0300
-draft: draft
-permalink: /draft-2025-kr2025-kworkflow
+date: 2025-11-03 18:30:00 -0300
+categories: igalia
 ---
 
 <img
@@ -37,7 +36,7 @@ showed how to mix and match kernel workflow recipes end-to-end.
 
 As I was a bit fast when showing some features during my presentation, in this
 blog post I explain each slide from my speaker notes. You can see a summary of
-my presentation in [the Kernel Recipe Live Blog Day 1: morning](https://kernel-recipes.org/en/2025/live-blog-day-1-morning/).
+this presentation in [the Kernel Recipe Live Blog Day 1: morning](https://kernel-recipes.org/en/2025/live-blog-day-1-morning/).
 
 ---
 
